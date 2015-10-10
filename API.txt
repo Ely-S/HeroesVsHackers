@@ -1,6 +1,6 @@
 API V1
 Path		
-/user/id
+/user/:id
 
 User model
 {
