@@ -1,0 +1,19 @@
+API V1
+Path		
+/user/id
+
+User model
+{
+	user_name: 		String
+	user_id: 		Number (10 digits)
+	user_monsters: 	Array of Monster Objects
+}
+
+Monster model
+{
+	rep_company: String (retailer name)
+	nickname:	 String
+	level:		 Number
+	points:		 Points
+	promos:		 String
+}
