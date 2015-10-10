@@ -8,6 +8,7 @@ var app = express();
 
 app.set('port', process.env.PORT || 3000);
 
+
 app.get('/user/:id', function(req, res){
 	var id = req.params.id;
 	var path = './data/data.json';
@@ -18,6 +19,13 @@ app.get('/user/:id', function(req, res){
 	res.send(JSON.parse(content));
 });
 
+app.put('/', function(req, res) {
+
+});
+
+app.post('/', function(req, res) {
+
+});
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Server listening on port ' + app.get('port'));

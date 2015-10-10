@@ -1,13 +1,15 @@
 {
-	"user_name" : "John Doe",
-	"user_id" :	 "0053526002",
-	"user_monsters" : [
-		{
-			"company" : "Pepnovo",
-			"nickname" : "Moar points",
-			"level" :	1,
-			"points" : 100,
-			"promos" : "Buy one get one free"
-		}
-	]	
+	{
+		"user_name" : "John Doe",
+		"user_id" :	 "0053526002",
+		"user_monsters" : [
+			{
+				"company" : "Pepnovo",
+				"nickname" : "Moar points",
+				"level" :	1,
+				"points" : 100,
+				"promos" : "Buy one get one free"
+			}
+		]
+	}
 }
