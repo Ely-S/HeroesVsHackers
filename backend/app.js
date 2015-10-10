@@ -4,18 +4,18 @@ var path 		= require('path');
 var url 		= require('url');
 var fs			= require('fs');
 
-var app = express();
+var app = express(),
+	db = JSON.parse(fs.readFileSync("./data/data.json"));
 
 app.set('port', process.env.PORT || 3000);
 
 app.get('/user/:id', function(req, res){
-	var id = req.params.id;
-	var path = './data/data.json';
-	console.log(id);
-
-	var content = fs.readFileSync(path);
-
-	res.send(JSON.parse(content));
+	var content = db[req.params.id];
+	if (content) {
+		res.send(content);
+	} else {
+		res.status(404).end();
+	}
 });
 
 
