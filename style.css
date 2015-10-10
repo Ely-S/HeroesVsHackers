@@ -1,0 +1,10 @@
+
+.page h3{
+    color: brown;
+}
+
+#qrcode{
+    width:100px;
+    height:100px;
+    margin: auto 0;
+}
