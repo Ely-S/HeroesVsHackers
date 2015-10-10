@@ -1,0 +1,57 @@
+h1, h2, h3 {
+    color: brown;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+#qrcode{
+            margin: 0 auto;
+            width: 200px;
+        }
+
+
+#starbucks img {
+    width: 100px;
+    height: 100px;
+    padding-bottom:10px;
+}
+
+
+#dd img{
+    width:100px;
+    height:100px;
+    padding-bottom:10px;
+}
+
+#pb img{
+    width:150px;
+    height:100px;
+    padding-bottom:10px;
+}
+
+#starbucks{
+    padding-top: 10px;
+    padding-bottom:5px;
+    border-radius: 5px;
+    background-color: lightgrey;
+}
+
+#dd{
+    padding-top: 10px;
+    padding-bottom:5px;
+    border-radius:5px;
+    background-color: lightgrey;
+    margin-top:10px;
+}
+#pb{
+    padding-top:10px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    background-color: lightgrey;
+    margin-top: 10px;
+}
+#SeeAll{
+    padding-top: 10px;
+    margin-top:15px;
+    border-top: 3px solid lightgrey;
+}
