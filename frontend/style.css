@@ -55,3 +55,7 @@ h1, h2, h3 {
     margin-top:15px;
     border-top: 3px solid lightgrey;
 }
+#btn{
+    cursor: hand;
+    margin-left:40%;
+}
