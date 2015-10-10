@@ -1,0 +1,25 @@
+{
+  "name": "monster_rewards",
+  "version": "1.0.0",
+  "description": "loyalty plaform",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "express-logger": "0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ely-S/HeroesVsHackers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ely-S/HeroesVsHackers/issues"
+  },
+  "homepage": "https://github.com/Ely-S/HeroesVsHackers#readme"
+}
