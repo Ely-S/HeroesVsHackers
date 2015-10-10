@@ -12,7 +12,7 @@ app.get('/user/:id', function(req, res){
 	var id = req.params.id;
 	var path = './data/data.json';
 	console.log(id);
-	
+
 	var content = fs.readFileSync(path);
 
 	res.send(JSON.parse(content));
