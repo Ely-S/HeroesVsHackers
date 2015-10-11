@@ -17,7 +17,10 @@ var app = {
 			page("/index");
 		});
 
-		jQuery(this.ready.bind(this));
+		$(function(){
+			app.ready();
+		});
+
 		this.pages();
 		
 		if((app.user && app.user.id)) {
@@ -56,6 +59,7 @@ var app = {
 		page("/signin", this.page.bind(this, "signin"));
 		page("/signup", this.page.bind(this, "signup"));
 		page("/index", this.page.bind(this, "index"));
+		page("/monster", this.page.bind(this, "monster"));
 		page.start();
 	},
 
@@ -67,8 +71,8 @@ var app = {
 	},
 
 	rerender: function(){
-		this.templates.monster.render(this.user);
-		showMonster();
+		this.showMonster();
+		this.templates.monsters.render(this.user);
 	},
 
 	render: function(){
@@ -93,25 +97,23 @@ var app = {
 	},
 
 
-	showMonster: function(monster) {
+	showMonster: function(monster, showpage) {
 		// render monster data
 		if (monster) this.currentMonster = monster;
 		else monster = this.currentMonster;
 		if(!monster) return;
-		page("monster");
-		var monster = app.user.user_monsters.filter(function(m){
-			return monster != m.rep_company; 
+		var monster = app.user.monsters.filter(function(m){
+			return monster == m.company; 
 		})[0];
 		// render monster template
+		this.templates.monster.render(monster);
+		if (showpage) page("/monster");
 	},
 
 	ready: function(){
-		// bind event listeners here
-		// document ready listener, this = app
-		$(".monster-icon").click(function(){
-			app.showMonster(this.getAttribute("data"));
+		$("#monsters").on("click tap", ".monster", function(){
+			app.showMonster(this.getAttribute("data"), true);
 		});
-
 	},
 
 	trigger: function() {
