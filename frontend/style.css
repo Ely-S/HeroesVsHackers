@@ -9,7 +9,22 @@ h1, h2, h3 {
             width: 200px;
         }
 
-
+#fb{
+   width:300px;
+    height:75px;
+}
+#or{
+    margin-top:10px;
+    font-size: medium;
+    color: brown;
+}
+#submit{
+    margin-left: 40%;
+}
+#forgotpwd{
+    margin-top:5px;
+    margin-left:35%
+}
 #starbucks img {
     width: 100px;
     height: 100px;
