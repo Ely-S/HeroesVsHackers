@@ -19,13 +19,20 @@ var app = {
 		});
 
 		jQuery(this.ready.bind(this));
-
-		page.start();
+		this.pages();
 	},
 
 	templates: {
 		monster: Template("#monster"),
 		monsters: Template("#monsters")
+	},
+
+	pages: function(){
+		page("/", this.page.bind(this, "signin"));
+		page("/signin", this.page.bind(this, "signin"));
+		page("/signup", this.page.bind(this, "signup"));
+		page("/index", this.page.bind(this, "index"));
+		page.start();
 	},
 
 	page: function(id) {
@@ -48,7 +55,7 @@ var app = {
 		// initiate long-polling request
 		$.ajax({
 			dataType: "json",
-			timeout: Math.pow(10, 10);
+			timeout: Math.pow(10, 10),
 			url: app.baseURL+"/updates",
 			success: function(data, textStatus, jqXHR){
 				app.user = data;
