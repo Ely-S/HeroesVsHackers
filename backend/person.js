@@ -124,26 +124,27 @@ exports.Person = function(id, name) {
 			"promos" :  ""
 		}
 	]
-}
+};
 
 exports.Person.prototype.to_JSON = function() {
-	var p = new Person(this.id, this.name);
-	p.user_monsters = this.user_monsters.map(function(element){
-		return {
-			"company" : element["company"],
-			"level" : element["level"],
-			"rewards" : element["rewards"],
-			"percentage" : element["percentage"],
-			"points" : element["points"],
-			"promos" :  element["promos"]	
-		};
-	});
-
-	// Calculate percentage
+	var p = new exports.Person(this.id, this.name);
+/*	// Calculate percentage
 	for(monster in p.user_monsters) {
 		
 	}
-
-	console.log(p.user_monsters);
-	return JSON.stringify(p);
-}
+*/
+	return JSON.stringify({
+		user_id: this.id,
+		user_name: this.name,
+		monsters: this.user_monsters.map(function(element){
+			return {
+				"company" : element["company"],
+				"level" : element["level"],
+				"rewards" : element["rewards"],
+				"percentage" : element["percentage"],
+				"points" : element["points"],
+				"promos" :  element["promos"]	
+			};
+		})
+	});
+};

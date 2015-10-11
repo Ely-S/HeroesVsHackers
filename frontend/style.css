@@ -111,7 +111,7 @@ button[type=submit]{
     background-color: #BF1B00;
 }
 .page {
-    /*display: none;*/
+    display: none;
 }
 
 h1, h2, h3 {

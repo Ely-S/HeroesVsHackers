@@ -127,7 +127,6 @@
            !-->
         <section class="panel suggestions" data-section-name="suggestions">
             <div class="card" id="suggestions">
-
                 <div class="heading text-center">
                     <h2>Suggestions</h2>
                 </div>
@@ -148,9 +147,9 @@
                 </div>
             </div>
         </section>
-
         <section data-section-name="rewards">
             <div class="card" id="rewards">
+<<<<<<< HEAD
                 <div class="card">
                     <div class="heading text-center"><h2>All Of My Rewards</h2></div>
                     <div id="monsters">
@@ -161,10 +160,20 @@
                                 <div class="progress-bar" role="progressbar" style="width: {{percentage}}">
                                     {{percentage}}%
                                 </div>
+=======
+                <div class="heading text-center"><h3>All Of My Rewards</h3></div>
+                <div id="monsters">
+                    {{#monsters}}
+                      <div class="col-xs-6">
+                        <img src="companies/{{company}}-logo.png" alt="{{company}}-ogo" class="img-thumbnail">
+                        <div class="progress favbar1">
+                            <div class="progress-bar" role="progressbar" style="width: {{percentage}}">
+                                {{percentage}}%
+>>>>>>> origin/master
                             </div>
                         </div>
-                        {{/user_monsters}}
-                    </div>
+                     </div>
+                    {{/monsters}}
                 </div>
             </div>
         </section>
@@ -203,6 +212,9 @@
         </section>
 
  </div>
+        <a class="other-brown">Redeem my rewards WHAT DOES THIS DO</a>
+        </div>
+</div>
 
 <script src="js/main.js"></script>
 <script src="js/scroll.js"></script>
