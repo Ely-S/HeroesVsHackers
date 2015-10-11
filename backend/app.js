@@ -6,22 +6,40 @@ var fs			= require('fs');
 var login 		= require("./login/app.js");
 var passport 	= require("./login/middleware");
 
-
 var person 		= require('./person');
 
+var dataPath = "./data/data.json";
+
 var app = express(),
-	db = JSON.parse(fs.readFileSync("./data/data.json"));
+	db = JSON.parse(fs.readFileSync(dataPath));
 
 app.set('port', process.env.PORT || 3000);
 
 // login system
 login.set("redirectUrl", "http://localhost:3000/#loggedIn");
+
+login.set("getUser", function(username){
+	for (var i in db){
+		if (db[i].name === username) {
+			return db[i];
+		}
+	} 
+	return false;
+
 login.set("onlogin", function(user){
 	//check if user exists
+	if(db[user.id]) {
+		return;
+	} else { 	//if not create new user
+		var id = user.id;
+		var name = user.name;
 
+		db.push(new person.Person(id,name));
 
-	//if not create new user
-
+		fs.writeFile(dataPath, JSON.stringify(db), function() {
+			res.send("successfully modified");			
+		});
+	}
 });
 
 app.use("/auth", login);
@@ -31,7 +49,6 @@ app.use(passport.session());
 // use req.isAuthenticated to test if a user is authenticated
 
 app.get('/user', function(req, res){
-
 	if (!req.isAuthenticated) res.status(405).end();
 	var content = db[req.params.id];
 
@@ -42,6 +59,7 @@ app.get('/user', function(req, res){
 	}
 });
 
+///auth/login
 app.put('/user/:id', function(req, res) {
 	// var id = req.user.id;
 	// var name = req.user.name;
@@ -60,6 +78,11 @@ app.get('/user/:id/:retailer', function(req, res) {
 		var points =  db[id].user_monsters.find(function(element){
 			return element.company == retailer;
 		}).points;
+
+		//If the user never joined
+		if(points == null) {
+
+		}
 
 		res.send(points);
 	} else {
@@ -80,7 +103,7 @@ app.put('/user/:id/:retailer', function(req, res) {
 			return element.company == retailer;
 		}).points = newPoints;
 
-		fs.writeFile("./data/data.json", JSON.stringify(db), function() {
+		fs.writeFile(dataPath, JSON.stringify(db), function() {
 			res.send("successfully modified");			
 		});
 
