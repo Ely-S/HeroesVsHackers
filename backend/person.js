@@ -107,15 +107,15 @@ exports.Person.prototype.to_JSON = function() {
 		monsters: this.user_monsters.map(function(element){
 			var percentage = 0;
 			var userPoints = element["points"];
-			var rewardTiers = element["rewards"].map(function(points){
-				return points;
+			var rewardTiers = element["rewards"].map(function(entry){
+				return entry.points;
 			});
 
 			for(var index = 0; index < rewardTiers.length; index++) {
 				var requirement = rewardTiers[index];
 
 				if( userPoints <= requirement )
-					percentage = (userPoints / requirement) * 100;
+					percentage = Math.ceil((userPoints / requirement) * 100);
 				else if ( userPoints > requirement && index != rewardTiers.length -1 )	//Make sure that there is another tier
 					continue;
 				else //Defaults to 100% if there isn't another tier
