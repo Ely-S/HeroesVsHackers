@@ -128,7 +128,7 @@
                 <div class="heading text-center">
                   <h4>All Of My Rewards</h4>
                   <form>
-                    <input style="width:100%; margin:10px" type="text" placeholder="Search..." required>
+                    <input style="margin-bottom: 20px;margin-top: 20px;" class="form-control" type="text" placeholder="Search..." required>
                     <!-- <input type="button" value="Search"> -->
                   </form>
                 </div>
@@ -137,7 +137,7 @@
                       <div class="col-xs-6 monster" data="{{company}}">
                         <img src="images/companies/{{company}}-logo.png" alt="{{company}}-logo" class="img-thumbnail">
                         <div class="progress favbar1">
-                            <div class="progress-bar" role="progressbar" style="width: {{percentage}}">
+                            <div class="progress-bar" role="progressbar" style="width: {{percentage}}%">
                                 {{percentage}}%
                             </div>
                         </div>
@@ -188,11 +188,10 @@
                             <h2 id="tip_heading" >{{points}} points total</h2>
                         </div>
                         <div id="tips_strbx">
-                            {{#rewards[0]}}
-                              <h3>Awards you can claim now</h3>
-                              <p>{{rewards[0]}}</p>
-                              <p>{{rewards[1]}}</p>
-                            {{/rewards[0]}}
+                            <h3>Awards you can claim now</h3>
+                            {{#rewards}}
+                              <p><b>{{points}}: </b>{{name}}</p>
+                            {{/rewards}}
                         </div>
                         <div class="progress favbar1">
                             <div class="progress-bar progress-bar-danger" role="progressbar" style="width: {{percentage}}%">
