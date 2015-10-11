@@ -9,7 +9,7 @@ var serveStatic = require('serve-static');
 
 var person 		= require('./person');
 
-var dataPath = "./data/data.json";
+var dataPath =  "./data/data.json";
 
 var app = express(),
 	db = JSON.parse(fs.readFileSync(dataPath));
@@ -98,7 +98,7 @@ app.get('/user/:id/:retailer', function(req, res) {
 		var stats = {
 			"points" : points ,
 			"percentage" : percentage 
-		}
+		};
 
 		res.send(stats);
 	} else {
