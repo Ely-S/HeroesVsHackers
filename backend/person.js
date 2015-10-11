@@ -20,7 +20,7 @@ exports.Person = function(id, name) {
 				}
 			],
 			"percentage" : 0,
-			"points" : 0,
+			"points" : 125,
 			"promos" :  ""
 		},
 		{
@@ -41,7 +41,7 @@ exports.Person = function(id, name) {
 				}
 			],
 			"percentage" : 0,
-			"points" : 0,
+			"points" : 50,
 			"promos" :  ""
 		},
 		{
@@ -54,7 +54,7 @@ exports.Person = function(id, name) {
 				}
 			],
 			"percentage" : 0,
-			"points" : 0,
+			"points" : 200,
 			"promos" :  ""
 		},
 		{
@@ -67,7 +67,7 @@ exports.Person = function(id, name) {
 				}
 			],
 			"percentage" : 0,
-			"points" : 0,
+			"points" : 90,
 			"promos" :  ""
 		},
 		{
@@ -93,7 +93,7 @@ exports.Person = function(id, name) {
 				}
 			],
 			"percentage" : 0,
-			"points" : 0,
+			"points" : 60,
 			"promos" :  ""
 		}
 	]
@@ -114,8 +114,10 @@ exports.Person.prototype.to_JSON = function() {
 			for(var index = 0; index < rewardTiers.length; index++) {
 				var requirement = rewardTiers[index];
 
-				if( userPoints <= requirement )
+				if( userPoints <= requirement ) {
 					percentage = Math.ceil((userPoints / requirement) * 100);
+					break;
+				}
 				else if ( userPoints > requirement && index != rewardTiers.length -1 )	//Make sure that there is another tier
 					continue;
 				else //Defaults to 100% if there isn't another tier
