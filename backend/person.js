@@ -124,7 +124,7 @@ exports.Person = function(id, name) {
 			"promos" :  ""
 		}
 	]
-}
+};
 
 exports.Person.prototype.to_JSON = function() {
 	var p = new exports.Person(this.id, this.name);

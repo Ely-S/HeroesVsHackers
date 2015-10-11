@@ -151,17 +151,16 @@
             <div class="card" id="rewards">
                 <div class="heading text-center"><h3>All Of My Rewards</h3></div>
                 <div id="monsters">
-                    {{#user_monsters}}
+                    {{#monsters}}
                       <div class="col-xs-6">
-                            <img src="companies/{{company}}-logo.png" alt="{{company}}-ogo" class="img-thumbnail">
-                            <div class="progress favbar1">
-                                <div class="progress-bar" role="progressbar" style="width: {{percentage}}">
-                                    {{percentage}}%
-                                </div>
+                        <img src="companies/{{company}}-logo.png" alt="{{company}}-ogo" class="img-thumbnail">
+                        <div class="progress favbar1">
+                            <div class="progress-bar" role="progressbar" style="width: {{percentage}}">
+                                {{percentage}}%
                             </div>
                         </div>
-                        {{/user_monsters}}
-                    </div>
+                     </div>
+                    {{/monsters}}
                 </div>
             </div>
         </section>
