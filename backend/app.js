@@ -49,13 +49,13 @@ app.use("/auth", login);
 app.use(passport.initialize());
 app.use(passport.session());
 
-// use req.isAuthenticated to test if a user is authenticated
+// use req.isAuthenticated() to test if a user is authenticated
 
 // holds clients waiting for updates
 var connections = {};
 
 app.get('/user', function(req, res){
-	if (!req.isAuthenticated) res.status(401).end();
+	if (!req.isAuthenticated()) res.status(401).end();
 	var content = db[req.params.id];
 
 	if (content) {

@@ -23,7 +23,8 @@ var app = express();
   app.use(serveStatic(__dirname + '/public'));
 
 app.get('/user.json', function(req, res){
-  if(req.isAuthenticated) return res.send(req.user);
+  console.log(req.isAuthenticated());
+  if(req.isAuthenticated()) return res.send(req.user);
   return res.status(401).end()
 });
 
