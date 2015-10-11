@@ -14,7 +14,8 @@ function validateSignup(){
     if (x == null || x == "") {
         alert("Enter password");
         return false;
-    } ele if (x.length < 6)
+    }
+    else if (x.length < 6)
     if(a != x && a.length < 6)
     {
         alert("Passwords do not match. Enter correct password");
