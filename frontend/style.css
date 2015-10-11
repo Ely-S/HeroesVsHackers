@@ -28,10 +28,7 @@ form a {
 }
 
 
-h2{
-    margin-top:40px;
-    margin-bottom:50px;
-}
+
 
 
 input[type=email],
@@ -75,6 +72,8 @@ hr {
   vertical-align:middle;
   margin-top: 8px;
 }
+
+
 
 /*brown for c all and redeam rewards */
 .other-brown {
@@ -197,36 +196,31 @@ h1, h2, h3 {
     margin-left:40%;
 }
 #zara img{
-    width:150px;
-    height:150px;
-    padding-top:10px;
-    margin-top:15px;
+    width:247px;
+    height:62px;
 }
+
 #wf img{
-    width:150px;
-    height:150px;
-    padding-top:10px;
-    margin-top:15px;
+    width:161px;
+    height:161px;
+
 }
 
 #tjmaxx img{
-    width:150px;
-    height:150px;
-    padding-top:10px;
-    margin-top:15px;
+    width:495px;
+    height:121px;
+
 }
 #panera img
 {
-    width:150px;
-    height:150px;
-    padding-top:10px;
-    margin-top:15px;
+    width:296px;
+    height:203px;
+
 }
 #uniqlo img{
-    width:150px;
-    height:100px;
-    padding-top: 10px;
-    margin-top:15px;
+    width:182px;
+    height:181px;
+
 }
 
 .img-thumbnail{
