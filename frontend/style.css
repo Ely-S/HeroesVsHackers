@@ -52,6 +52,13 @@ cf {
   background-color: white;
 }
 
+#growlogo {
+  width: 30px,auto;
+  height: 30px;
+  vertical-align:middle;
+  margin-top: 8px;
+}
+
 /*brown for c all and redeam rewards */
 .other-brown {
 color: #894700;
