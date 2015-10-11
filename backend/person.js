@@ -102,8 +102,8 @@ exports.Person = function(id, name) {
 exports.Person.prototype.to_JSON = function() {
 
 	return JSON.stringify({
-		user_id: this.id,
-		user_name: this.name,
+		user_id: this.user_id || "0053526002",
+		user_name: this.user_name || "Jason",
 		monsters: this.user_monsters.map(function(element){
 			var percentage = 0;
 			var userPoints = element["points"];

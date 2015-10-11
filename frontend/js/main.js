@@ -66,7 +66,6 @@ var app = {
 	page: function(id) {
 		$(".page").hide();
 		$("#"+id).show();
-		$("#monster").show(); // FOR DEV!!!!
 		this.trigger("page:"+id);
 	},
 
@@ -76,7 +75,7 @@ var app = {
 	},
 
 	render: function(){
-		app.makeCode(app.user.id);
+		app.makeCode(app.user.user_id);
 		this.templates.monsters.render(this.user);
 	},
 
