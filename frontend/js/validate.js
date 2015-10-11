@@ -11,10 +11,10 @@ function validateSignup(){
         return false;
     }
 
-    if ((x == null || x == "")&& x.length < 6) {
+    if (x == null || x == "") {
         alert("Enter password");
         return false;
-    }
+    } ele if (x.length < 6)
     if(a != x && a.length < 6)
     {
         alert("Passwords do not match. Enter correct password");
@@ -30,7 +30,7 @@ function validateSignin(){
         alert("Enter email");
         return false;
     }
-    if((r == null || r == "") && r.length<6)
+    if((r == null || r == "") || r.length<6)
     {
         alert("Enter password");
         return false;
