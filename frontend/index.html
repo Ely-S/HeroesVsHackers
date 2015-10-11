@@ -82,16 +82,17 @@
                 </div>
                 <div id="qrcode" class="content text-center"></div>
             </div>
-    	    <div class="card" id="favorites">
-                <nav class="navbar" role="navigation">
-                    <div class="content text-center">
-                        <img src="images/grow-logo.png" align="middle" class="growlogo">
+            <!--
+        	    <div class="card" id="favorites">
+                    <nav class="navbar" role="navigation">
+                        <div class="content text-center">
+                            <img src="images/grow-logo.png" align="middle" class="growlogo">
+                        </div>
+                    </nav>
+                    <div class="heading text-center">
+                        <h3>My Favorites</h3>
                     </div>
-                </nav>
-                <div class="heading text-center">
-                    <h3>My Favorites</h3>
-                </div>
-            <div class="collectibles">
+                <div class="collectibles">
                 <div id="starbucks">
                     <img src="http://www.calautomuseum.org/wp-content/uploads/2015/01/starbucks.jpg" alt="Starbucks logo" class="img-responsive center-block">
                     <div class="progress">
@@ -123,6 +124,7 @@
                 </div>
             </div>
         </div>
+        !-->
 	    <div class="card" id="suggestions">
             <nav class="navbar" role="navigation">
                 <div class="content text-center">
@@ -155,62 +157,18 @@
                 </div>
             </nav>
             <div class="card">
-                <div class="heading text-center">
-                    <h3>All Of My Rewards</h3>
-                </div>
-                <div class="row">
+                <div class="heading text-center"><h3>All Of My Rewards</h3></div>
+                <div id="monsters">
+                    {{#user_monsters}}
                     <div class="col-xs-6">
-                        <img src="http://sharedvision.care/wp-content/uploads/2015/04/target.jpg" alt="Target logo" class="img-thumbnail">
-                        <div class="progress favbar1" >
-                            <div class="progress-bar" role="progressbar" style="width: 15%">
-                                15%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <img src="http://www.amomstake.com/wp-content/uploads/2013/03/PetSmart_logo-600x150.jpg" alt="Pet Smart logo" class="img-thumbnail">
+                        <img src="companies/{{name}}-logo.png" alt="{{name}}-ogo" class="img-thumbnail">
                         <div class="progress favbar1">
-                            <div class="progress-bar" role="progressbar" style="width: 60%">
-                                60%
+                            <div class="progress-bar" role="progressbar" style="width: {{percentage}}">
+                                {{percentage}}%
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6">
-                        <img src="http://i.bnet.com/blogs/gap_logo-old.jpg" alt="GAP logo" class="img-thumbnail">
-                        <div class="progress favbar1" >
-                            <div class="progress-bar" role="progressbar" style="width: 35%">
-                                35%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <img src="http://cvbj.biz/wp-content/uploads/2014/09/Apple-logo-icon-Aluminum-485x485.png" alt="APPLE logo" class="img-thumbnail">
-                        <div class="progress favbar1">
-                            <div class="progress-bar" role="progressbar" style="width: 42%">
-                                42%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6">
-                        <img src="https://s3.amazonaws.com/brand-logos/hm.jpg" alt="H&M logo" class="img-thumbnail">
-                        <div class="progress favbar1" >
-                            <div class="progress-bar" role="progressbar" style="width: 80%">
-                                80%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <img src="http://vignette1.wikia.nocookie.net/logopedia/images/e/ee/Logo_brand_Adidas.png/revision/latest?cb=20150303221147" alt="APPLE logo" class="img-thumbnail">
-                        <div class="progress favbar1">
-                            <div class="progress-bar" role="progressbar" style="width: 100%">
-                                100%
-                            </div>
-                        </div>
-                    </div>
+                    {{/user_monsters}}
                 </div>
             </div>
         </div>
