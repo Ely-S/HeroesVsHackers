@@ -5,66 +5,88 @@ exports.Person = function(id, name) {
 		{
 			"company" : "starbucks",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
 			"company" : "dunkindonuts",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
 			"company" : "pinkberry",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
 			"company" : "target",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
 			"company" : "petsmart",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
 			"company" : "gap",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
 			"company" : "apple",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
 			"company" : "h&m",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
 			"company" : "adidas",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
 			"company" : "nike",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
 			"company" : "jambajuice",
 			"level" : 0,
+			"next_item" : "",
+			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		}
