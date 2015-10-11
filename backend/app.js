@@ -26,6 +26,8 @@ login.set("getUser", function(username){
 	} 
 	return false;
 
+});
+
 login.set("onlogin", function(user){
 	//check if user exists
 	if(db[user.id]) {
@@ -42,11 +44,15 @@ login.set("onlogin", function(user){
 	}
 });
 
+
 app.use("/auth", login);
 app.use(passport.initialize());
 app.use(passport.session());
 
 // use req.isAuthenticated to test if a user is authenticated
+
+// holds clients waiting for updates
+var connections = {};
 
 app.get('/user', function(req, res){
 	if (!req.isAuthenticated) res.status(405).end();
@@ -90,6 +96,10 @@ app.get('/user/:id/:retailer', function(req, res) {
 	}	
 });
 
+app.get("/update", function(req, res){
+	connections[req.user.id] = req;
+});
+
 app.put('/user/:id/:retailer', function(req, res) {
 	var key = req.query['key']
 	var newPoints = req.query['points'];
@@ -99,9 +109,15 @@ app.put('/user/:id/:retailer', function(req, res) {
 
 	//Needs retailer authentication
 	if(key) {
-		db[id].user_monsters.find(function(element){
+		db[id].user_monsters.find(function(element) {
 			return element.company == retailer;
 		}).points = newPoints;
+
+		var con = connections[id]; 
+		if (con) {
+			connections[id].send(db[id]).end();
+			delete(connections[id]);
+		}
 
 		fs.writeFile(dataPath, JSON.stringify(db), function() {
 			res.send("successfully modified");			
@@ -111,7 +127,6 @@ app.put('/user/:id/:retailer', function(req, res) {
 		res.status(401).end();
 	}
 });
-
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Server listening on port ' + app.get('port'));
