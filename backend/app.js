@@ -55,7 +55,7 @@ app.use(passport.session());
 var connections = {};
 
 app.get('/user', function(req, res){
-	if (!req.isAuthenticated) res.status(405).end();
+	if (!req.isAuthenticated) res.status(401).end();
 	var content = db[req.params.id];
 
 	if (content) {
