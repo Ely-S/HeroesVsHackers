@@ -65,17 +65,15 @@
                 </div>
             </form>
         </div>
-        <section class="panel scan" data-section-name="scan">
-            <div class="page" id="index">
+        <div class="page" id="index">
+            <section class="panel scan" data-section-name="scan">
                 <div class="card">
                     <div class="heading text-center">
                         <h2>Scan Me</h2>
                     </div>
                     <div id="qrcode" class="content text-center"></div>
                 </div>
-            </div>
-        </section>
-
+            </section>
             <!--
                <div class="card" id="favorites">
                    <div class="heading text-center">
@@ -125,8 +123,8 @@
                </div>
            </div>
            !-->
-        <section class="panel suggestions" data-section-name="suggestions">
-            <div class="card" id="suggestions">
+        <div class="card" id="suggestions">
+            <section class="panel suggestions" data-section-name="suggestions">
                 <div class="heading text-center">
                     <h2>Suggestions</h2>
                 </div>
@@ -145,10 +143,10 @@
                 <div id="uniqlo">
                     <img src="http://resinseal.com/images/gallery/uniqlo.png" alt="UNIQLO logo" class="img-responsive center-block">
                 </div>
-            </div>
-        </section>
-        <section data-section-name="rewards">
-            <div class="card" id="rewards">
+            </section>
+        </div>
+        <div class="card" id="rewards">
+            <section data-section-name="rewards">
                 <div class="heading text-center"><h3>All Of My Rewards</h3></div>
                 <div id="monsters">
                     {{#monsters}}
@@ -162,44 +160,39 @@
                      </div>
                     {{/monsters}}
                 </div>
-            </div>
-        </section>
-
-        <section class="panel monsters" data-section-name="monsters">
-            <div class="page card" id="monster">
-                <div class="heading text-center">
-                    <h1 id="strbx">starbucks</h1>
-                </div>
-                <div id="strbx_logo">
-                    <img src="images/starbucks-logo.png">
-                </div>
-                <div id="strbx_rewards">
-                    <div id="cf">
-                        <img class="top" src="images/sprout.png" alt="Starbucks Rewards">
-                        <img class="bottom" src="images/seed-v2.png" alt="Starbucks Rewards">
-                    </div>
-                </div>
-                <div class="tips">
+            </section>
+        </div>
+         </div> <!-- end index page-->
+        <div class="page card" id="monster">
+            <section class="panel monsters" data-section-name="monsters">
                     <div class="heading text-center">
-                        <h2 id="tip_heading" >Tips</h2>
+                        <h1 id="strbx">starbucks</h1>
                     </div>
-                    <div id="tips_strbx">
-                        <p>Create a PSL Fan Pass and unlock a Pumpkin Spice Latte early!</p>
+                    <div id="strbx_logo">
+                        <img src="images/starbucks-logo.png">
                     </div>
-                    <div class="progress favbar1">
-                        <div class="progress-bar" role="progressbar" style="width: 25%">
-                            25%
+                    <div id="strbx_rewards">
+                        <div id="cf">
+                            <img class="top" src="images/sprout.png" alt="Starbucks Rewards">
+                            <img class="bottom" src="images/seed-v2.png" alt="Starbucks Rewards">
                         </div>
                     </div>
-                </div>
-                <hr>
-
-                <a class="other-brown">Redeem my rewards WHAT DOES THIS DO</a>
-            </div>
-        </section>
-
- </div>
-        <a class="other-brown">Redeem my rewards WHAT DOES THIS DO</a>
+                    <div class="tips">
+                        <div class="heading text-center">
+                            <h2 id="tip_heading" >Tips</h2>
+                        </div>
+                        <div id="tips_strbx">
+                            <p>Create a PSL Fan Pass and unlock a Pumpkin Spice Latte early!</p>
+                        </div>
+                        <div class="progress favbar1">
+                            <div class="progress-bar" role="progressbar" style="width: 25%">
+                                25%
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <a class="other-brown">Redeem my rewards WHAT DOES THIS DO</a>
+            </section>
         </div>
 </div>
 
@@ -219,7 +212,7 @@
             section:"section",
             sectionName:"scan",
             easing:"easeOutExpo",
-            scrollSpeed:900,
+            scrollSpeed:400,
             offset: -30,
             scrollbars: true,
             axis:"y",
