@@ -13,7 +13,16 @@ var app = express(),
 app.set('port', process.env.PORT || 3000);
 
 // login system
-login.set("redirectUrl", "http://localhost:3000/#loggedIn")
+login.set("redirectUrl", "http://localhost:3000/#loggedIn");
+login.set("getUser", function(username){
+	for (var i in db){
+		if (db[i].name === username) {
+			return db[i];
+		}
+	} 
+	return false;
+});
+
 app.use("/auth", login);
 app.use(passport.initialize());
 app.use(passport.session());
@@ -28,14 +37,6 @@ app.get('/user', function(req, res){
 	} else {
 		res.status(404).end();
 	}
-});
-
-app.put('/', function(req, res) {
-
-});
-
-app.post('/', function(req, res) {
-
 });
 
 http.createServer(app).listen(app.get('port'), function() {
