@@ -41,7 +41,7 @@ var app = {
 		// if logged in go to main page
 		// else display login screen till done
 		$.getJSON("/auth/user.json", function(data){
-			app.user = data;
+			app.user = JSON.parse(data);
 			app.trigger("login");
 		}).fail(function(jqXHR, textStatus, errorThrown ) {
 			if(errorThrown=="Unauthorized") {
