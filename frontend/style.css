@@ -12,15 +12,32 @@ body {
     background-color: #efefef;
 }
 
+.container{
+    width:100%;
+}
 a {
     display: block;
     text-align: center;
 }
-
+.growlogo{
+    width:40px;
+    height:40px;
+}
 form a {
     color: #894700;
 }
 
+
+h2{
+    margin-top:40px;
+    margin-bottom:50px;
+}
+
+
+input[type=email],
+input[type=password]{
+    height:40px;
+}
 hr {
     border-top: 3px solid #efefef;
     width: 100%;
@@ -57,11 +74,18 @@ cf {
 color: #894700;
 }
 .form-control {
+    margin-top:50px;
     border-radius: 0;
     border: none;
-    box-shadow: 1px 1px 2px -2px #000;
+    box-shadow: 2px 2px 2px -2px #000;
 }
-
+button[type=submit]{
+    margin-top:50px;
+    margin-bottom:30px;
+}
+#signin_btn{
+    margin-bottom:10px;
+}
 .card {
     padding: 20px;
     background-color: white;
