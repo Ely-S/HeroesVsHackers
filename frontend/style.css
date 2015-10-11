@@ -196,30 +196,34 @@ h1, h2, h3 {
     margin-left:40%;
 }
 #zara img{
-    width:247px;
-    height:62px;
+    width:100px;
+    height:75px;
+    margin-top:20px;
 }
 
 #wf img{
-    width:161px;
-    height:161px;
+    width:100px;
+    height:100px;
+    margin-top:15px;
 
 }
 
 #tjmaxx img{
-    width:495px;
-    height:121px;
-
+    width:100px;
+    height:80px;
+    margin-top:15px
 }
 #panera img
 {
-    width:296px;
-    height:203px;
+    width:100px;
+    height:90px;
+    margin-top:15px;
 
 }
 #uniqlo img{
-    width:182px;
-    height:181px;
+    width:152px;
+    height:150px;
+    margin-top:15px;
 
 }
 
