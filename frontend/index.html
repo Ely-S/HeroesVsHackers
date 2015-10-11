@@ -159,6 +159,16 @@
                 <div class="heading text-center">
                     <h3>All Of My Rewards</h3>
                 </div>
+                <div id="monsters">
+                    <div class="col-xs-6">
+                        <img src="{{src}}" alt="{{name}}logo" class="img-thumbnail">
+                        <div class="progress favbar1" >
+                            <div class="progress-bar" role="progressbar" style="width: {{percent}}">
+                                {{percent}}%
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-xs-6">
                         <img src="http://sharedvision.care/wp-content/uploads/2015/04/target.jpg" alt="Target logo" class="img-thumbnail">
@@ -237,9 +247,9 @@
                 <div id="tips_strbx">
                     <p>Create a PSL Fan Pass and unlock <br> a Pumpkin Spice Latte early!</p>
                 </div>
-                <div class="progress favbar1">
-                    <div class="progress-bar" role="progressbar" style="width: 25%">
-                        25%
+                <div class="progress">
+                    <div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                        <span class="sr-only">60% Complete</span>
                     </div>
                 </div>
             </div>
