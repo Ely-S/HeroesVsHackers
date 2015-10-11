@@ -183,15 +183,13 @@ h1, h2, h3 {
 #strbx{
     border-bottom: 2px solid lightgrey;
 }
-#strbx_rewards{
-    background-image: url("images/starbucks-logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top:10px;
+#strbx_logo{
+    margin-top:20px;
+    margin-left:80px;
 }
 
+
 #strbx_img{
-    margin-top:130px;
     width:160px;
     height:160px;
     padding-bottom: 10px;
@@ -200,7 +198,7 @@ h1, h2, h3 {
 
 
 .tips{
-    width:340px;
+    width:300px;
     height:150px;
     border-radius:10px;
     border:1px transparent;
