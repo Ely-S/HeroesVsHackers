@@ -26,6 +26,8 @@ login.set("getUser", function(username){
 	} 
 	return false;
 
+});
+
 login.set("onlogin", function(user){
 	//check if user exists
 	if(db[user.id]) {
@@ -41,6 +43,7 @@ login.set("onlogin", function(user){
 		});
 	}
 });
+
 
 app.use("/auth", login);
 app.use(passport.initialize());
