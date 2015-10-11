@@ -55,3 +55,47 @@ h1, h2, h3 {
     margin-top:15px;
     border-top: 3px solid lightgrey;
 }
+#btn{
+    cursor: hand;
+    margin-left:40%;
+}
+#zara img{
+    width:150px;
+    height:150px;
+    padding-top:10px;
+    margin-top:15px;
+}
+#wf img{
+    width:150px;
+    height:150px;
+    padding-top:10px;
+    margin-top:15px;
+}
+
+#tjmaxx img{
+    width:150px;
+    height:150px;
+    padding-top:10px;
+    margin-top:15px;
+}
+#panera img
+{
+    width:150px;
+    height:150px;
+    padding-top:10px;
+    margin-top:15px;
+}
+#uniqlo img{
+    width:150px;
+    height:100px;
+    padding-top: 10px;
+    margin-top:15px;
+}
+
+.img-thumbnail{
+    height:150px;
+    width:150px;
+    position: relative;
+    display: inline-block;
+    margin-bottom:10px;
+}

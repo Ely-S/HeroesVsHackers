@@ -34,7 +34,7 @@ var app = {
 
 	pages: function(){
 
-	}
+	},
 
 	render: function(){
 		makeCode(user.id);
@@ -79,7 +79,7 @@ var app = {
 	}
 };
 
-app.init()
+app.init();
 
 function Template(element) {
 	this.element = $(element).hide();
