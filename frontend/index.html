@@ -6,10 +6,7 @@
     <meta name='viewport' content='width=device-width,initial-scale=1'>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="js/page.js"></script>
-    <script src="js/qrcode.js"></script>    
-    <script src="js/main.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link href="style.css" rel="stylesheet">
     <link href="images" rel="icon">
 </head>
@@ -25,18 +22,18 @@
             <div id="or">
                 <p>---------------------------- OR ---------------------------</p>
             </div>
-            <form action="localhost:3000/Auth/login/Signup" method="post">
+            <form name="signup" action="localhost:3000/auth/login/signup" onsubmit="return validateSignup()" method="post">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="user" placeholder="Email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="pwd" placeholder="Password">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword2">Confirm Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Re-type Password">
+                    <input type="password" class="form-control" id="exampleInputPassword2" name="pwd2" placeholder="Re-type Password">
                 </div>
                 <div>
                     <button type="submit" id="submit" class="btn btn-default btn-default-lg">Sign Up</button>
@@ -54,14 +51,14 @@
             <div id="or">
                 <p>---------------------------- OR ---------------------------</p>
             </div>
-            <form action="localhost:3000/Auth/login/Signin" method="post">
+            <form name="signin" action="localhost:3000/auth/login/signin" onsubmit="return validateSignin()" method="post">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="Email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
                 </div>
                 <div>
                     <button type="submit" id="submit" class="btn btn-default btn-default-lg">Sign In</button>
@@ -193,7 +190,19 @@
                 </div>
             </div>
         </div>
+        <div class="page">
+            <div class="heading text-center">
+                <h1 id="strbx">STARBUCKS</h1>
+            </div>
+            <div id="strbx_rewards">
+                <img src="images/sprout.png" alt="Starbucks Rewards">
+            </div>
+        </div>
     </div>
-
+    <script src="js/page.js"></script>
+    <script src="js/qrcode.js"></script>    
+    <script src="js/mustache.js"></script>    
+    <script src="js/main.js"></script>
+    <script src="js/validate.js"></script>
 </body>
 </html>

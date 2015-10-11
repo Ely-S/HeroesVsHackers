@@ -114,3 +114,10 @@ h1, h2, h3 {
     display: inline-block;
     margin-bottom:10px;
 }
+
+#strbx{
+    border-bottom: 2px solid lightgrey;
+}
+#strbx_rewards{
+    background-image: url("images/";
+}

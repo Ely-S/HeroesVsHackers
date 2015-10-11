@@ -1,4 +1,6 @@
 var app = {
+	baseURL: "http://locahost:3000/",
+
 	init: function(){
 		this.e = $(document.body);
 		// Determine if logged in
@@ -13,8 +15,7 @@ var app = {
 		});
 
 		this.on("update", function(){
-
-
+			this.rerender();
 		});
 
 		jQuery(this.ready.bind(this));
@@ -23,7 +24,8 @@ var app = {
 	},
 
 	templates: {
-		monster: Template("#monster")
+		monster: Template("#monster"),
+		monsters: Template("#monsters")
 	},
 
 	page: function(id) {
@@ -32,17 +34,38 @@ var app = {
 		this.trigger("page:"+id);
 	},
 
-	pages: function(){
-
+	rerender: function(){
+		templates.monster.render(this.user.monsters);
+		showMonster();
 	},
 
 	render: function(){
 		makeCode(user.id);
+		templates.monsters.render(this.user.monsters);
+	},
+
+	update: function(){
+		// initiate long-polling request
+		$.ajax({
+			dataType: "json",
+			timeout: Math.pow(10, 10);
+			url: app.baseURL+"/updates",
+			success: function(data, textStatus, jqXHR){
+				app.user = data;
+				app.trigger("update");
+			},
+			complete: function(){
+				app.update();
+			}
+		});
 	},
 
 
 	showMonster: function(monster) {
 		// render monster data
+		if (monster) this.currentMonster = monster;
+		else monster = this.currentMonster;
+		if(!monster) return;
 		page("monster");
 		var monster = app.user.user_monsters.filter(function(m){
 			return monster != m.rep_company; 

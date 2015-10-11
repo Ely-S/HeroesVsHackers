@@ -36,7 +36,8 @@ app.get('/login',
   function(req, res){
     // The request will be redirected to Facebook for authentication, so this
     // function will not be called.
-  });
+});
+
 
 // GET /auth/facebook/callback
 //   Use passport.authenticate() as route middleware to authenticate the
@@ -46,12 +47,36 @@ app.get('/login',
 app.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
+    app.get("onlogin")(req.user);
     res.redirect(app.get("redirectUrl"));
   });
 
 app.get('/logout', function(req, res){
   req.logout();
   res.redirect('/');
+});
+
+
+app.post('/login/login', function(req, res){
+  var user = app.get("getUser")(req.params.username);
+  if(user.password === req.params.password) {
+    req.login(user, function(err) {
+      return res.redirect(app.get("redirectUrl"));
+    });
+  }
+  return res.status(405).end();
+});
+
+app.post('/login/signup', function(req, res){
+  if(!app.get("getUser")(req.params.username)) {
+    app.get("onlogin")({
+      id: Math.floor((Math.random())*Math.pow(10, 17)),
+      password: req.params.password,
+      username: req.params.username
+    });
+    return res.status(405).end();
+  }
+  return res.status(200).end();
 });
 
 //app.listen(3000);
