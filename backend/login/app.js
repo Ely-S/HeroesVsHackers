@@ -11,8 +11,6 @@ var express = require('express')
 var app = express();
 
 // configure Express
-  app.set('views', __dirname + '/views');
-  app.set('view engine', 'ejs');
   // app.use(logger());
   app.use(cookieParser());
   app.use(bodyParser.json());
@@ -24,7 +22,7 @@ var app = express();
   app.use(passport.session());
   app.use(serveStatic(__dirname + '/public'));
 
-app.get('/get', function(req, res){
+app.get('/user.json', passport.authenticate('facebook'), function(req, res){
   res.send(req.user);
 });
 
@@ -33,7 +31,7 @@ app.get('/get', function(req, res){
 //   request.  The first step in Facebook authentication will involve
 //   redirecting the user to facebook.com.  After authorization, Facebook will
 //   redirect the user back to this application at /auth/facebook/callback
-app.get('/facebook',
+app.get('/login',
   passport.authenticate('facebook'),
   function(req, res){
     // The request will be redirected to Facebook for authentication, so this
@@ -48,7 +46,7 @@ app.get('/facebook',
 app.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
-    res.redirect('/');
+    res.redirect(app.get("redirectUrl"));
   });
 
 app.get('/logout', function(req, res){

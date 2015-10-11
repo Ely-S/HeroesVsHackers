@@ -2,7 +2,8 @@ var passport = require('passport'),
     FacebookStrategy = require('passport-facebook').Strategy;
 
 var FACEBOOK_APP_ID = "1043929735619693",
-    FACEBOOK_APP_SECRET = "fca264a47212055cca56e7b306870001";
+    FACEBOOK_APP_SECRET = "fca264a47212055cca56e7b306870001",
+    CALLBACK_URL = "http://localhost:3000/auth/facebook/callback";
 
 
 // Passport session setup.
@@ -28,7 +29,7 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new FacebookStrategy({
     clientID: FACEBOOK_APP_ID,
     clientSecret: FACEBOOK_APP_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/callback"
+    callbackURL: CALLBACK_URL
   },
   function(accessToken, refreshToken, profile, done) {
     // asynchronous verification, for effect...
