@@ -209,6 +209,9 @@ h1, h2, h3 {
 
 }
 
+#monsters {
+    overflow: auto;
+}
 #tjmaxx img{
     width:120px;
     height:100px;
