@@ -8,7 +8,7 @@ var app = {
 		// else display login screen till done
 
 		this.on("login", function(){
-			$.getJSON(function(data){
+			$.getJSON("/auth/user.json", function(data){
 				app.user = data;
 				app.render();
 			});
@@ -33,6 +33,9 @@ var app = {
 		page("/signup", this.page.bind(this, "signup"));
 		page("/index", this.page.bind(this, "index"));
 		page.start();
+		if (location.href.endsWith('#logedIn')) {
+			this.trigger("login");
+		}
 	},
 
 	page: function(id) {
@@ -47,7 +50,7 @@ var app = {
 	},
 
 	render: function(){
-		makeCode(user.id);
+		makeCode(app.user.id);
 		templates.monsters.render(this.user.monsters);
 	},
 
