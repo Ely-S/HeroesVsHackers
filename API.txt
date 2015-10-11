@@ -1,6 +1,4 @@
 API V1
-Path		
-/user/:id
 
 User model
 {
@@ -17,3 +15,12 @@ Monster model
 	points:		 Points
 	promos:		 String
 }
+
+Method		URL						Desc
+GET			/user 					Gets Current User
+GET			/user/:id/:retailer		Allow retailer to get user points
+GET			/update					Updates client
+PUT			/user/:id 				Creates user (not used atm)
+PUT			/user/:id/:retailer 	Update user points
+
+
