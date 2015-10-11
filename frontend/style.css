@@ -26,9 +26,35 @@ hr {
     width: 100%;
 }
 
+cf {
+  position:absolute;
+  height:160px;
+  width:160px;
+  margin:0 auto;
+}
+
+#cf img {
+  position:absolute;
+  /*left:0;*/
+  height:160px;
+  width:160px;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+#cf img.bottom:hover {
+  opacity:0;
+}
+
+#cf img.bottom {
+  background-color: white;
+}
+
 /*brown for c all and redeam rewards */
 .other-brown {
-color: #894700;    
+color: #894700;
 }
 .form-control {
     border-radius: 0;
@@ -54,7 +80,7 @@ color: #894700;
     background-color: #BF1B00;
 }
 .page {
-    display: none;
+    /*display: none;*/
 }
 
 h1, h2, h3 {

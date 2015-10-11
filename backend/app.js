@@ -64,7 +64,6 @@ app.get('/user', function(req, res){
 		res.status(404).end();
 	}
 });
-
 ///auth/login
 app.put('/user/:id', function(req, res) {
 	// var id = req.user.id;
@@ -81,18 +80,21 @@ app.get('/user/:id/:retailer', function(req, res) {
 	var retailer = req.params['retailer'];
 
 	if(key) {
-		var points =  db[id].user_monsters.find(function(element){
+		var retailer = db[id].user_monsters.find(function(element){
 			return element.company == retailer;
-		}).points;
-
+		});
+		var points =  retailer.points;
+		var percentage = retailer.percentage;
 		//If the user never joined
-		if(points == null) {
 
+		var stats = {
+			"points" : points ,
+			"percentage" : percentage 
 		}
 
-		res.send(points);
+		res.send(stats);
 	} else {
-		res.status(401).end();
+		res.sendStatus(401).end();
 	}	
 });
 
