@@ -70,6 +70,17 @@ app.put('/user/:id', function(req, res) {
 	// console.log(db);
 });
 
+app.get('/user.json', function(req, res){
+  console.log(req.isAuthenticated());
+  if(req.isAuthenticated()) {
+	var user = db[req.user.id],
+		person = new Person(user.id, user.name);
+  	return res.json(person.to_JSON());
+  }
+  return res.status(401).end()
+});
+
+
 app.get('/user/:id/:retailer', function(req, res) {
 	var key = req.query['key']
 
