@@ -5,7 +5,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "starbucks",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -13,7 +16,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "dunkindonuts",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -21,7 +27,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "pinkberry",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -29,7 +38,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "target",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -37,7 +49,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "petsmart",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -45,7 +60,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "gap",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -53,7 +71,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "apple",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -61,7 +82,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "h&m",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -69,7 +93,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "adidas",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -77,7 +104,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "nike",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -85,7 +115,10 @@ exports.Person = function(id, name) {
 		{
 			"company" : "jambajuice",
 			"level" : 0,
-			"next_item" : "",
+			"rewards" : [
+				{"item1" : 0},
+				{"item2" : 0} 
+			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
@@ -94,5 +127,23 @@ exports.Person = function(id, name) {
 }
 
 exports.Person.prototype.to_JSON = function() {
-	return JSON.stringify(this);
+	var p = new Person(this.id, this.name);
+	p.user_monsters = this.user_monsters.map(function(element){
+		return {
+			"company" : element["company"],
+			"level" : element["level"],
+			"rewards" : element["rewards"],
+			"percentage" : element["percentage"],
+			"points" : element["points"],
+			"promos" :  element["promos"]	
+		};
+	});
+
+	// Calculate percentage
+	for(monster in p.user_monsters) {
+		
+	}
+
+	console.log(p.user_monsters);
+	return JSON.stringify(p);
 }
