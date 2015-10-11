@@ -71,15 +71,15 @@ app.get('/user.json', function(req, res){
 });*/
 
 app.get('/user.json', function(req, res){
-  console.log(req.isAuthenticated());
-  if(req.isAuthenticated()) {
+//  console.log(req.isAuthenticated()); SKIP CHECK FOR NOW
+//  if(req.isAuthenticated()) {
     /// MOCKING THE USER ID TO USE THE SEEDED USER ////
     var user = app.get("db")['0053526002'], //db[req.user.id],
       p = new person.Person(user.id, user.name);
       return res.json(p.to_JSON());
-  } else {
-    return res.status(401).end()
-  }
+//  } else {
+//    return res.status(401).end()
+//  }
 });
 
 
