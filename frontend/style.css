@@ -1,3 +1,57 @@
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v6/zhcz-_WihjSQC0oHJ9TCYPk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #894700;
+    background-color: #efefef;
+}
+
+a {
+    display: block;
+    text-align: center;
+}
+
+form a {
+    color: #894700;
+}
+
+hr {
+    border-top: 3px solid #efefef;
+    width: 100%;
+}
+
+/*brown for c all and redeam rewards */
+.other-brown {
+color: #894700;    
+}
+.form-control {
+    border-radius: 0;
+    border: none;
+    box-shadow: 1px 1px 2px -2px #000;
+}
+
+.card {
+    padding: 20px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.btn {
+    border-radius: 0;
+    border: none;
+    display: block;
+    width: 100%;
+    color: white;
+}
+.btn-primary {
+    background-color: #BF1B00;
+}
 .page {
     display: none;
 }
@@ -9,22 +63,23 @@ h1, h2, h3 {
 }
 
 #qrcode{
-            margin: 0 auto;
-            width: 200px;
-        }
+    margin: 0 auto;
+    width: 200px;
+}
 
 #fb{
    width:300px;
-    height:75px;
+   height:75px;
+}
+.btn-fb {
+    background-color: #3D5A98;
 }
 #or{
     margin-top:10px;
     font-size: medium;
     color: brown;
 }
-#submit{
-    margin-left: 40%;
-}
+
 #forgotpwd{
     margin-top:5px;
     margin-left:35%
@@ -125,3 +180,4 @@ h1, h2, h3 {
 #strbx_rewards{
     background-image: url("images/";
 }
+
