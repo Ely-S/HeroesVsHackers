@@ -109,7 +109,7 @@ app.put('/user/:id/:retailer', function(req, res) {
 
 	//Needs retailer authentication
 	if(key) {
-		db[id].user_monsters.find(function(element){
+		db[id].user_monsters.find(function(element) {
 			return element.company == retailer;
 		}).points = newPoints;
 
@@ -127,7 +127,6 @@ app.put('/user/:id/:retailer', function(req, res) {
 		res.status(401).end();
 	}
 });
-
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Server listening on port ' + app.get('port'));
