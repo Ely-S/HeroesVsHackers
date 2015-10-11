@@ -59,3 +59,47 @@ h1, h2, h3 {
     cursor: hand;
     margin-left:40%;
 }
+#zara img{
+    width:150px;
+    height:150px;
+    padding-top:10px;
+    margin-top:15px;
+}
+#wf img{
+    width:150px;
+    height:150px;
+    padding-top:10px;
+    margin-top:15px;
+}
+
+#tjmaxx img{
+    width:150px;
+    height:150px;
+    padding-top:10px;
+    margin-top:15px;
+}
+#panera img
+{
+    width:150px;
+    height:150px;
+    padding-top:10px;
+    margin-top:15px;
+}
+#uniqlo img{
+    width:150px;
+    height:100px;
+    padding-top: 10px;
+    margin-top:15px;
+}
+#target{
+    width:150px;
+    height:150px;
+    margin-top:15px;
+    padding:10px;
+    margin-left:10px;
+
+}
+#ps{
+    width:200px;
+
+}
