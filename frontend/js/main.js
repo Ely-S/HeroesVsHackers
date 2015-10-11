@@ -48,6 +48,7 @@ var app = {
 		// initiate long-polling request
 		$.ajax({
 			dataType: "json",
+			timeout: Math.pow(10, 10);
 			url: app.baseURL+"/updates",
 			success: function(data, textStatus, jqXHR){
 				app.user = data;
