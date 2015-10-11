@@ -27,7 +27,6 @@ login.set("getUser", function(username) {
 	return false;
 });
 
-
 login.set("onlogin", function(user) {
 	//check if user exists
 	if(db[user.id]) {
