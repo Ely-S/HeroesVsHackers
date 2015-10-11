@@ -6,41 +6,18 @@ exports.Person = function(id, name) {
 			"company" : "starbucks",
 			"level" : 0,
 			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
-			],
-			"percentage" : 0,
-			"points" : 0,
-			"promos" :  ""
-		},
-		{
-			"company" : "dunkindonuts",
-			"level" : 0,
-			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
-			],
-			"percentage" : 0,
-			"points" : 0,
-			"promos" :  ""
-		},
-		{
-			"company" : "pinkberry",
-			"level" : 0,
-			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
-			],
-			"percentage" : 0,
-			"points" : 0,
-			"promos" :  ""
-		},
-		{
-			"company" : "target",
-			"level" : 0,
-			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
+				{	
+					"name" : "One Free Pumpkin Spice Latte",
+					"points" : 100
+				},
+				{	
+					"name" : "Two Free Cups of Coffee",
+					"points" : 250
+				},
+				{
+					"name" : "One Free Pastry",
+					"points" : 750
+				}
 			],
 			"percentage" : 0,
 			"points" : 0,
@@ -50,8 +27,18 @@ exports.Person = function(id, name) {
 			"company" : "petsmart",
 			"level" : 0,
 			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
+				{	
+					"name" : "$19 Grooming Coupon",
+					"points" : 100
+				},
+				{
+					"name" : "10% Off",
+					"points" : 200
+				},
+				{	
+					"name" : "One free brush",
+					"points" : 300
+				}
 			],
 			"percentage" : 0,
 			"points" : 0,
@@ -61,8 +48,10 @@ exports.Person = function(id, name) {
 			"company" : "gap",
 			"level" : 0,
 			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
+				{	
+					"name" : "50% Off",
+					"points" : 300
+				}
 			],
 			"percentage" : 0,
 			"points" : 0,
@@ -72,19 +61,23 @@ exports.Person = function(id, name) {
 			"company" : "apple",
 			"level" : 0,
 			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
+				{	
+					"name" : "10% off",
+					"points" : 300
+				}
 			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		},
 		{
-			"company" : "h&m",
+			"company" : "hm",
 			"level" : 0,
 			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
+				{	
+					"name" : "25% Off",
+					"points" : 300
+				}
 			],
 			"percentage" : 0,
 			"points" : 0,
@@ -94,57 +87,50 @@ exports.Person = function(id, name) {
 			"company" : "adidas",
 			"level" : 0,
 			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
-			],
-			"percentage" : 0,
-			"points" : 0,
-			"promos" :  ""
-		},
-		{
-			"company" : "nike",
-			"level" : 0,
-			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
-			],
-			"percentage" : 0,
-			"points" : 0,
-			"promos" :  ""
-		},
-		{
-			"company" : "jambajuice",
-			"level" : 0,
-			"rewards" : [
-				{"item1" : 0},
-				{"item2" : 0} 
+				{	
+					"name" : "10% Off",
+					"points" : 300
+				}
 			],
 			"percentage" : 0,
 			"points" : 0,
 			"promos" :  ""
 		}
 	]
-};
+}
 
 exports.Person.prototype.to_JSON = function() {
-	var p = new exports.Person(this.id, this.name);
-/*	// Calculate percentage
-	for(monster in p.user_monsters) {
-		
-	}
-*/
+
 	return JSON.stringify({
 		user_id: this.id,
 		user_name: this.name,
 		monsters: this.user_monsters.map(function(element){
+			var percentage = 0;
+			var userPoints = element["points"];
+			var rewardTiers = element["rewards"].map(function(points){
+				return points;
+			});
+
+			for(var index = 0; index < rewardTiers.length; index++) {
+				var requirement = rewardTiers[index];
+
+				if( userPoints <= requirement )
+					percentage = (userPoints / requirement) * 100;
+				else if ( userPoints > requirement && index != rewardTiers.length -1 )	//Make sure that there is another tier
+					continue;
+				else //Defaults to 100% if there isn't another tier
+					percentage = 100;
+			}
+
 			return {
 				"company" : element["company"],
 				"level" : element["level"],
 				"rewards" : element["rewards"],
-				"percentage" : element["percentage"],
-				"points" : element["points"],
+				"percentage" : percentage,
+				"points" : userPoints,
 				"promos" :  element["promos"]	
 			};
 		})
 	});
 };
+
