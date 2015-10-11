@@ -9,7 +9,7 @@ var serveStatic = require('serve-static');
 
 var person 		= require('./person');
 
-var dataPath =  "./data/data.json";
+var dataPath = "./data/data.json";
 
 var app = express(),
 	db = JSON.parse(fs.readFileSync(dataPath));
@@ -18,7 +18,7 @@ app.set('port', process.env.PORT || 3000);
 
 // login system
 login.set("redirectUrl", "http://localhost:3000/#loggedIn");
-
+login.set("db", db);
 login.set("getUser", function(username) {
 	for (var i in db){
 		if (db[i].name === username) {
@@ -36,7 +36,8 @@ login.set("onlogin", function(user) {
 		db[id] = new person.Person(user.id, user.name);
 
 		fs.writeFile(dataPath, JSON.stringify(db), function() {
-			res.send("successfully modified");
+			/*don't write anything to request. Request redirects in parent calling function
+			res.send("successfully modified");*/
 		});
 	}
 });
@@ -70,16 +71,18 @@ app.put('/user/:id', function(req, res) {
 	// console.log(db);
 });
 
-app.get('/user.json', function(req, res){
+/*app.get('/user.json', function(req, res){
   console.log(req.isAuthenticated());
   if(req.isAuthenticated()) {
 	var user = db[req.user.id],
 		person = new Person(user.id, user.name);
   	return res.json(person.to_JSON());
+  } else {
+	  return res.status(401).end()
   }
-  return res.status(401).end()
 });
 
+*/
 
 app.get('/user/:id/:retailer', function(req, res) {
 	var key = req.query['key']
@@ -98,7 +101,7 @@ app.get('/user/:id/:retailer', function(req, res) {
 		var stats = {
 			"points" : points ,
 			"percentage" : percentage 
-		};
+		}
 
 		res.send(stats);
 	} else {

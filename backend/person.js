@@ -127,7 +127,9 @@ exports.Person = function(id, name) {
 }
 
 exports.Person.prototype.to_JSON = function() {
-	var p = new Person(this.id, this.name);
+	var p = new exports.Person(this.id, this.name);
+	p.user_id = this.id;
+	p.user_name = this.name;
 	p.user_monsters = this.user_monsters.map(function(element){
 		return {
 			"company" : element["company"],

@@ -6,8 +6,8 @@ var express = require('express')
   , session = require('express-session')
   , bodyParser = require("body-parser")
   , cookieParser = require("cookie-parser")
-  , methodOverride = require('method-override');
-
+  , methodOverride = require('method-override')
+  , person =         require("./../person.js");
 var app = express();
 
 // configure Express
@@ -62,6 +62,27 @@ app.post('/login/login', function(req, res){
   }
   return res.status(401).end();
 });
+
+/*
+app.get('/user.json', function(req, res){
+  console.log(req.isAuthenticated());
+  if(req.isAuthenticated()) return res.send(req.user);
+  return res.status(401).end()
+});*/
+
+app.get('/user.json', function(req, res){
+  console.log(req.isAuthenticated());
+  if(req.isAuthenticated()) {
+    /// MOCKING THE USER ID TO USE THE SEEDED USER ////
+    var user = app.get("db")['0053526002'], //db[req.user.id],
+      p = new person.Person(user.id, user.name);
+      return res.json(p.to_JSON());
+  } else {
+    return res.status(401).end()
+  }
+});
+
+
 
 app.post('/login/signup', function(req, res){
   if(!app.get("getUser")(req.params.username)) {

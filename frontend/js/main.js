@@ -81,7 +81,7 @@ var app = {
 		$.ajax({
 			dataType: "json",
 			timeout: Math.pow(10, 10),
-			url: app.baseURL+"/updates",
+			url: app.baseURL+"update",
 			success: function(data, textStatus, jqXHR){
 				app.user = data;
 				app.trigger("update");
