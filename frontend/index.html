@@ -170,29 +170,29 @@
          </div>
         </div> <!-- end index page-->
         <div class="page card" id="monster">
-            <section class="panel monsters" data-section-name="monsters">
+            <section class="panel panel-monsters" data-section-name="monsters">
                     <div class="heading text-center">
-                        <h1 id="strbx">starbucks</h1>
+                        <h1 id="strbx">{{company}}</h1>
                     </div>
                     <div id="strbx_logo">
-                        <img src="images/starbucks-logo.png">
+                        <img src="images/{{company}}-logo.png">
                     </div>
                     <div id="strbx_rewards">
                         <div id="cf">
-                            <img class="top" src="images/sprout.png" alt="Starbucks Rewards">
-                            <img class="bottom" src="images/seed-v2.png" alt="Starbucks Rewards">
+                            <img class="top" src="images/sprout.png" alt="{{company}} Rewards">
+                            <img class="bottom" src="images/seed-v2.png" alt="{{company}} Rewards">
                         </div>
                     </div>
                     <div class="tips">
                         <div class="heading text-center">
-                            <h2 id="tip_heading" >Tips</h2>
+                            <h2 id="tip_heading">Tips</h2>
                         </div>
                         <div id="tips_strbx">
                             <p>Create a PSL Fan Pass and unlock a Pumpkin Spice Latte early!</p>
                         </div>
                         <div class="progress favbar1">
-                            <div class="progress-bar" role="progressbar" style="width: 25%">
-                                25%
+                            <div class="progress-bar" role="progressbar" style="width: {{percent}}%">
+                                {{percent}}%
                             </div>
                         </div>
                     </div>
