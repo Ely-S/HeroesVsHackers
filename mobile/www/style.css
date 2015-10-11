@@ -120,10 +120,6 @@ h1, h2, h3 {
     text-transform: lowercase;
     font-family: 'Montserrat', sans-serif;
 }
-#loading {
-    height: 100%;
-    width: 100%;
-}
 .navbar{
     background-color: #016f51;
 
