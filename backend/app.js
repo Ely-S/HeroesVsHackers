@@ -5,6 +5,7 @@ var url 		= require('url');
 var fs			= require('fs');
 var login 		= require("./login/app.js");
 var passport 	= require("./login/middleware");
+var serveStatic = require('serve-static');
 
 var person 		= require('./person');
 
@@ -126,6 +127,8 @@ app.put('/user/:id/:retailer', function(req, res) {
 		res.status(401).end();
 	}
 });
+
+app.use(express.static('../frontend'));
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Server listening on port ' + app.get('port'));
