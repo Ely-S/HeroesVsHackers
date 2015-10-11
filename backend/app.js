@@ -5,6 +5,7 @@ var url 		= require('url');
 var fs			= require('fs');
 var login 		= require("./login/app.js");
 var passport 	= require("./login/middleware");
+var serveStatic = require('serve-static');
 
 var person 		= require('./person');
 
@@ -63,7 +64,6 @@ app.get('/user', function(req, res){
 		res.status(404).end();
 	}
 });
-
 ///auth/login
 app.put('/user/:id', function(req, res) {
 	// var id = req.user.id;
@@ -80,18 +80,21 @@ app.get('/user/:id/:retailer', function(req, res) {
 	var retailer = req.params['retailer'];
 
 	if(key) {
-		var points =  db[id].user_monsters.find(function(element){
+		var retailer = db[id].user_monsters.find(function(element){
 			return element.company == retailer;
-		}).points;
-
+		});
+		var points =  retailer.points;
+		var percentage = retailer.percentage;
 		//If the user never joined
-		if(points == null) {
 
+		var stats = {
+			"points" : points ,
+			"percentage" : percentage 
 		}
 
-		res.send(points);
+		res.send(stats);
 	} else {
-		res.status(401).end();
+		res.sendStatus(401).end();
 	}	
 });
 
@@ -126,6 +129,8 @@ app.put('/user/:id/:retailer', function(req, res) {
 		res.status(401).end();
 	}
 });
+
+app.use(express.static('../frontend'));
 
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Server listening on port ' + app.get('port'));
