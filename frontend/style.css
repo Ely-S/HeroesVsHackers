@@ -184,15 +184,12 @@ h1, h2, h3 {
     border-bottom: 2px solid lightgrey;
 }
 #strbx_logo{
-    margin-top:10px;
-    margin-bottom:15px;
-}
-#strbx_rewards{
-    margin-top:10px;
+    margin-top:20px;
+    margin-left:80px;
 }
 
+
 #strbx_img{
-    margin-top:130px;
     width:160px;
     height:160px;
     padding-bottom: 10px;
@@ -201,7 +198,7 @@ h1, h2, h3 {
 
 
 .tips{
-    width:340px;
+    width:300px;
     height:150px;
     border-radius:10px;
     border:1px transparent;
