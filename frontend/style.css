@@ -1,8 +1,14 @@
+
 h1, h2, h3 {
     color: brown;
     text-align: center;
     text-transform: capitalize;
 }
+.navbar{
+    background-color: #016f51;
+
+}
+
 
 #qrcode{
             margin: 0 auto;
