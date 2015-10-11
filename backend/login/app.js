@@ -72,12 +72,13 @@ app.get('/user.json', function(req, res){
 
 app.get('/user.json', function(req, res){
 //  console.log(req.isAuthenticated()); SKIP CHECK FOR NOW
-//  if(req.isAuthenticated()) {
+  if(req.isAuthenticated()) {
     /// MOCKING THE USER ID TO USE THE SEEDED USER ////
-    var user = app.get("db")['0053526002'], //db[req.user.id],
-      p = new person.Person(user.id, user.name);
+    var user = app.get("db")[req.user.id], //db[req.user.id],
+      p = new person.Person(user.user_id, user.user_name);
       return res.json(p.to_JSON());
-//  } else {
+  }
+  // else {
 //    return res.status(401).end()
 //  }
 });

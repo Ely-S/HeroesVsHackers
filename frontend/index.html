@@ -128,13 +128,13 @@
                 <div class="heading text-center">
                   <h3>All Of My Rewards</h3>
                   <form>
-                    <input type="text" placeholder="Search..." required>
-                    <input type="button" value="Search">
+                    <input style="width:100%; margin:10px" type="text" placeholder="Search..." required>
+                    <!-- <input type="button" value="Search"> -->
                   </form>
                 </div>
                 <div id="monsters">
                     {{#monsters}}
-                      <div class="col-xs-6">
+                      <div class="col-xs-6 monster" data="{{company}}">
                         <img src="images/companies/{{company}}-logo.png" alt="{{company}}-logo" class="img-thumbnail">
                         <div class="progress favbar1">
                             <div class="progress-bar" role="progressbar" style="width: {{percentage}}">
@@ -203,7 +203,11 @@
                         </div>
                     </div>
                     <hr>
+<<<<<<< HEAD
                     <a href="https://www.starbucks.com/card/rewards" class="other-brown">REDEEM MY REWARDS</a>
+=======
+                    <a class="other-brown text-center">Redeem my rewards</a>
+>>>>>>> origin/master
             </section>
         </div>
 </div>
@@ -211,14 +215,16 @@
 <script src="js/main.js"></script>
 <script src="js/scroll.js"></script>
 <script>
-    $(function() {
+
+/*    $(function() {
         $.scrollify({
             section : "section"
         });
     });
-
+*/
 </script>
 <script>
+/*
     $(function(){
         $.scrollify({
             section:"section",
@@ -260,6 +266,7 @@
             afterResize:function(){}
         });
     })
+*/
 </script>
 </body>
 </html>
