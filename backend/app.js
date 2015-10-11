@@ -18,15 +18,16 @@ app.set('port', process.env.PORT || 3000);
 // login system
 login.set("redirectUrl", "http://localhost:3000/#loggedIn");
 
-login.set("getUser", function(username){
+login.set("getUser", function(username) {
 	for (var i in db){
 		if (db[i].name === username) {
 			return db[i];
 		}
 	} 
 	return false;
+});
 
-login.set("onlogin", function(user){
+login.set("onlogin", function(user) {
 	//check if user exists
 	if(db[user.id]) {
 		return;
