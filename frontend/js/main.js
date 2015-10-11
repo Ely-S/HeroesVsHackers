@@ -5,21 +5,28 @@ var app = {
 		this.e = $(document.body);
 
 		// Determine if logged in
-		// if logged in go to page 1
+		// if logged in go to main page
 		// else display login screen till done
-
-		this.on("login", function(){
-			$.getJSON("/auth/user.json", function(data){
-				app.user = data;
-				app.render();
-			});
+		$.getJSON("/auth/user.json", function(data){
+			app.user = data;
+			app.trigger("login");
+		}).fail(function(jqXHR, textStatus, errorThrown ) {
+			if(errorThrown=="Unauthorized") {
+				app.trigger("logout");
+			}
 		});
 
 		this.on("update", function(){
 			this.rerender();
 		});
 
-	
+		this.on("logout", function(){
+			page("/signin");
+		});
+
+		this.on("login", function(){
+			app.render();
+		});
 
 		jQuery(this.ready.bind(this));
 		this.pages();
@@ -41,21 +48,23 @@ var app = {
 			page("/index");
 			this.trigger("login");
 		}
+		//fordev
 	},
 
 	page: function(id) {
 		$(".page").hide();
 		$("#"+id).show();
+		$("#monster").show();
 		this.trigger("page:"+id);
 	},
 
 	rerender: function(){
-		templates.monster.render(this.user.monsters);
+		this.templates.monster.render(this.user.monsters);
 		showMonster();
 	},
 
 	render: function(){
-		makeCode(app.user.id);
+		app.makeCode(app.user.id);
 		templates.monsters.render(this.user.monsters);
 	},
 
