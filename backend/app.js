@@ -59,8 +59,6 @@ app.get('/user', function(req, res){
 	}
 });
 
-<<<<<<< HEAD
-=======
 ///auth/login
 app.put('/user/:id', function(req, res) {
 	// var id = req.user.id;
@@ -115,7 +113,6 @@ app.put('/user/:id/:retailer', function(req, res) {
 });
 
 
->>>>>>> dbbb85729a22761b9acdc0ea348b99f8bfaf5b96
 http.createServer(app).listen(app.get('port'), function() {
 	console.log('Server listening on port ' + app.get('port'));
 });
