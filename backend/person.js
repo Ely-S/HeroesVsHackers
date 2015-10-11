@@ -71,7 +71,7 @@ exports.Person = function(id, name) {
 			"promos" :  ""
 		},
 		{
-			"company" : "h&m",
+			"company" : "hm",
 			"level" : 0,
 			"rewards" : [
 				{	
@@ -100,30 +100,37 @@ exports.Person = function(id, name) {
 }
 
 exports.Person.prototype.to_JSON = function() {
-	var p = new Person(this.id, this.name);
-	p.user_monsters = this.user_monsters.map(function(element){
-		return {
-			"company" : element["company"],
-			"level" : element["level"],
-			"rewards" : element["rewards"],
-			"percentage" : element["percentage"],
-			"points" : element["points"],
-			"promos" :  element["promos"]	
-		};
+
+	return JSON.stringify({
+		user_id: this.id,
+		user_name: this.name,
+		monsters: this.user_monsters.map(function(element){
+			var percentage = 0;
+			var userPoints = element["points"];
+			var rewardTiers = element["rewards"].map(function(points){
+				return points;
+			});
+
+			for(var index = 0; index < rewardTiers.length; index++) {
+				var requirement = rewardTiers[index];
+
+				if( userPoints <= requirement )
+					percentage = (userPoints / requirement) * 100;
+				else if ( userPoints > requirement && index != rewardTiers.length -1 )	//Make sure that there is another tier
+					continue;
+				else //Defaults to 100% if there isn't another tier
+					percentage = 100;
+			}
+
+			return {
+				"company" : element["company"],
+				"level" : element["level"],
+				"rewards" : element["rewards"],
+				"percentage" : percentage,
+				"points" : userPoints,
+				"promos" :  element["promos"]	
+			};
+		})
 	});
+};
 
-	// Calculate percentage
-	for(monster in p.user_monsters) {
-		var points = p.points;
-		var reward1 = Object.keys(p.rewards[0])[0];
-		var reward2 = Object.keys(p.rewards[1])[0];	
-
-		//if user exceeds the 1st reward calulate % for 2nd reward
-		if (points <= reward1)
-			monster.percentage = (points / reward1) * 100;
-		else
-			monster.percentage = (points / reward2) * 100;
-	}
-
-	return JSON.stringify(p);
-}

@@ -41,7 +41,7 @@ var app = {
 		// if logged in go to main page
 		// else display login screen till done
 		$.getJSON("/auth/user.json", function(data){
-			app.user = data;
+			app.user = JSON.parse(data);
 			app.trigger("login");
 		}).fail(function(jqXHR, textStatus, errorThrown ) {
 			if(errorThrown=="Unauthorized") {
@@ -81,7 +81,7 @@ var app = {
 		$.ajax({
 			dataType: "json",
 			timeout: Math.pow(10, 10),
-			url: app.baseURL+"/updates",
+			url: app.baseURL+"update",
 			success: function(data, textStatus, jqXHR){
 				app.user = data;
 				app.trigger("update");

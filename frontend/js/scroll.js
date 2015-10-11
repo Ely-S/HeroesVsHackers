@@ -510,6 +510,7 @@
         return elements[index];
     };
     $.scrollify.disable = function() {
+        var disable;
         disable = true;
     };
     $.scrollify.enable = function() {
