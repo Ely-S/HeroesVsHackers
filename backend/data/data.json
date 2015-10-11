@@ -3,127 +3,100 @@
         "user_name": "John Doe",
         "user_id": "0053526002",
         "user_monsters": [
-		{
-			"company" : "starbucks",
-			"level" : 1,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 45,
-			"points" : 37,
-			"promos" :  "Buy One Get One Free"
-		},
-		{
-			"company" : "dunkindonuts",
-			"level" : 2,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 85,
-			"points" : 53,
-			"promos" :  "Buy One Get One Free"
-		},
-		{
-			"company" : "pinkberry",
-			"level" : 0,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 66,
-			"points" : 80,
-			"promos" :  "Buy One Get One Free"
-		},
-		{
-			"company" : "target",
-			"level" : 2,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 4,
-			"points" : 3,
-			"promos" :  "Buy One Get One Free"
-		},
-		{
-			"company" : "petsmart",
-			"level" : 1,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 97,
-			"points" : 64,
-			"promos" :  "Buy One Get One Free"
-		},
-		{
-			"company" : "gap",
-			"level" : 2,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 33,
-			"points" : 27,
-			"promos" :  "Buy One Get One Free"
-		},
-		{
-			"company" : "apple",
-			"level" : 1,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 86,
-			"points" : 78,
-			"promos" :  "Buy One Get One Free"
-		},
-		{
-			"company" : "h&m",
-			"level" : 2,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 57,
-			"points" : 35,
-			"promos" :  "Buy One Get One Free"
-		},
-		{
-			"company" : "adidas",
-			"level" : 3,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 95,
-			"points" : 62,
-			"promos" :  "Buy One Get One Free"
-		},
-		{
-			"company" : "nike",
-			"level" : 1,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 20,
-			"points" : 12,
-			"promos" :  "Buy One Get One Free"
-		},
-		{
-			"company" : "jambajuice",
-			"level" : 2,
-			"rewards" : [
-				{"item1" : 68},
-				{"item2" : 129} 
-			],
-			"percentage" : 68,
-			"points" : 45,
-			"promos" :  "Buy One Get One Free"
-		}
-	]
+			{
+				"company" : "starbucks",
+				"level" : 0,
+				"rewards" : [
+					{	
+						"name" : "One Free Pumpkin Spice Latte",
+						"points" : 100
+					},
+					{	
+						"name" : "Two Free Cups of Coffee",
+						"points" : 250
+					},
+					{
+						"name" : "One Free Pastry",
+						"points" : 750
+					}
+				],
+				"percentage" : 0,
+				"points" : 0,
+				"promos" :  ""
+			},
+			{
+				"company" : "petsmart",
+				"level" : 0,
+				"rewards" : [
+					{	
+						"name" : "$19 Grooming Coupon",
+						"points" : 100
+					},
+					{
+						"name" : "10% Off",
+						"points" : 200
+					},
+					{	
+						"name" : "One free brush",
+						"points" : 300
+					}
+				],
+				"percentage" : 0,
+				"points" : 0,
+				"promos" :  ""
+			},
+			{
+				"company" : "gap",
+				"level" : 0,
+				"rewards" : [
+					{	
+						"name" : "50% Off",
+						"points" : 300
+					}
+				],
+				"percentage" : 0,
+				"points" : 0,
+				"promos" :  ""
+			},
+			{
+				"company" : "apple",
+				"level" : 0,
+				"rewards" : [
+					{	
+						"name" : "10% off",
+						"points" : 300
+					}
+				],
+				"percentage" : 0,
+				"points" : 0,
+				"promos" :  ""
+			},
+			{
+				"company" : "h&m",
+				"level" : 0,
+				"rewards" : [
+					{	
+						"name" : "25% Off",
+						"points" : 300
+					}
+				],
+				"percentage" : 0,
+				"points" : 0,
+				"promos" :  ""
+			},
+			{
+				"company" : "adidas",
+				"level" : 0,
+				"rewards" : [
+					{	
+						"name" : "10% Off",
+						"points" : 300
+					}
+				],
+				"percentage" : 0,
+				"points" : 0,
+				"promos" :  ""
+			}
+		]
     }
 }

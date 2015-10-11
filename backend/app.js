@@ -33,7 +33,7 @@ login.set("onlogin", function(user) {
 	if(db[user.id]) {
 		return;
 	} else { 	//if not create new user
-		db[id] = new person.Person(user.id, user.name);
+		db[user.id] = new person.Person(user.id, user.name);
 
 		fs.writeFile(dataPath, JSON.stringify(db), function() {
 			res.send("successfully modified");
