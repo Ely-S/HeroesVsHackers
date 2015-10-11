@@ -4,31 +4,51 @@ var app = {
 	init: function(){
 		this.e = $(document.body);
 
-		// Determine if logged in
-		// if logged in go to page 1
-		// else display login screen till done
-
-		this.on("login", function(){
-			$.getJSON("/auth/user.json", function(data){
-				app.user = data;
-				app.render();
-			});
-		});
-
 		this.on("update", function(){
 			this.rerender();
 		});
 
-	
+		this.on("logout", function(){
+			page("/signin");
+		});
+
+		this.on("login", function(){
+			app.render();
+			page("/index");
+		});
 
 		jQuery(this.ready.bind(this));
 		this.pages();
-	
+		
+		if((app.user && app.user.id)) {
+			this.trigger("login");
+		}
+
+		if (location.href.slice(-9) === ('#loggedIn')) {
+			this.loadUser();
+		} else {
+			this.loadUser();
+		}
 	},
 
 	templates: {
-		monster: Template("#monster"),
-		monsters: Template("#monsters")
+		monster: new Template("#monster"),
+		monsters: new Template("#monsters")
+	},
+
+	loadUser: function(){
+		// Determine if logged in
+		// if logged in go to main page
+		// else display login screen till done
+		$.getJSON("/auth/user.json", function(data){
+			app.user = data;
+			app.trigger("login");
+		}).fail(function(jqXHR, textStatus, errorThrown ) {
+			if(errorThrown=="Unauthorized") {
+				app.trigger("logout");
+			}
+		});
+
 	},
 
 	pages: function(){
@@ -37,26 +57,23 @@ var app = {
 		page("/signup", this.page.bind(this, "signup"));
 		page("/index", this.page.bind(this, "index"));
 		page.start();
-		if (location.href.slice(-8) === ('#logedIn')) {
-			page("/index");
-			this.trigger("login");
-		}
 	},
 
 	page: function(id) {
 		$(".page").hide();
 		$("#"+id).show();
+		$("#monster").show(); // FOR DEV!!!!
 		this.trigger("page:"+id);
 	},
 
 	rerender: function(){
-		templates.monster.render(this.user.monsters);
+		this.templates.monster.render(this.user);
 		showMonster();
 	},
 
 	render: function(){
-		makeCode(app.user.id);
-		templates.monsters.render(this.user.monsters);
+		app.makeCode(app.user.id);
+		this.templates.monsters.render(this.user);
 	},
 
 	update: function(){
@@ -121,11 +138,12 @@ app.init();
 
 function Template(element) {
 	this.element = $(element).hide();
-	this.template = Mustache.parse(this.element.html());
+	this.template = this.element.html();
+	Mustache.parse(this.template);
 }
 
 Template.prototype.render = function(data){
-  this.html(Mustache.render(this.template, data)).show();
+  this.element.html(Mustache.render(this.template, data)).show();
 };
 
 Template.prototype.hide = function(){

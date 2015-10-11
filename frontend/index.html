@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HeroesvsHackers</title>
+    <title>Heroes vs Hackers</title>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
     <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css' rel='stylesheet'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -22,12 +22,24 @@
             </div>
         </nav>
         <div class="page card" id="signup">
+<<<<<<< HEAD
 
+=======
+            <nav class="navbar" role="navigation">
+                <div class="content text-center">
+                    <img src="images/grow-logo.png" align="middle" id="growlogo">
+                </div>
+                </nav>
+>>>>>>> origin/master
             <div class="heading text-center">
                 <h2>Sign Up</h2>
             </div>
             <div class="content text-center">
+<<<<<<< HEAD
                 <a href="/" class="btn btn-primary btn-fb" >Sign up with facebook</a>
+=======
+                <a href="/auth/login" class="btn btn-primary btn-fb">Sign up with facebook</a>
+>>>>>>> origin/master
             </div>
             <form name="signup" action="localhost:3000/auth/login/signup" onsubmit="return validateSignup()" method="post">
                 <div class="form-group">
@@ -48,12 +60,20 @@
             </form>
         </div>
         <div class="page card" id="signin">
+<<<<<<< HEAD
 
+=======
+            <nav class="navbar" role="navigation">
+                <div class="content text-center">
+                    <img src="images/grow-logo.png" align="middle" id="growlogo">
+                </div>
+            </nav>
+>>>>>>> origin/master
             <div class="heading text-center">
                 <h2>Sign In</h2>
             </div>
             <div class="content text-center">
-                <a href="/" class="btn btn-primar btn-fb">Sign in with Facebook</a>
+                <a href="/auth/login" class="btn btn-primar btn-fb">Sign in with Facebook</a>
             </div>
             <form name="signin" action="localhost:3000/auth/login/signin" onsubmit="return validateSignin()" method="post">
                 <div class="form-group">
@@ -70,18 +90,40 @@
         </div>
         <div class="page" id="index">
             <div class="card">
+<<<<<<< HEAD
 
+=======
+                <nav class="navbar" role="navigation">
+                    <div class="content text-center">
+                        <img src="images/grow-logo.png" align="middle" id="growlogo">
+                    </div>
+                </nav>
+>>>>>>> origin/master
                 <div class="heading text-center">
                     <h2>Scan Me</h2>
                 </div>
                 <div id="qrcode" class="content text-center"></div>
             </div>
+<<<<<<< HEAD
     	    <div class="card" id="favorites">
 
                 <div class="heading text-center">
                     <h3>My Favorites</h3>
                 </div>
             <div class="collectibles">
+=======
+            <!--
+        	    <div class="card" id="favorites">
+                    <nav class="navbar" role="navigation">
+                        <div class="content text-center">
+                            <img src="images/grow-logo.png" align="middle" class="growlogo">
+                        </div>
+                    </nav>
+                    <div class="heading text-center">
+                        <h3>My Favorites</h3>
+                    </div>
+                <div class="collectibles">
+>>>>>>> origin/master
                 <div id="starbucks">
                     <img src="http://www.calautomuseum.org/wp-content/uploads/2015/01/starbucks.jpg" alt="Starbucks logo" class="img-responsive center-block">
                     <div class="progress">
@@ -113,8 +155,17 @@
                 </div>
             </div>
         </div>
+        !-->
 	    <div class="card" id="suggestions">
+<<<<<<< HEAD
 
+=======
+            <nav class="navbar" role="navigation">
+                <div class="content text-center">
+                    <img src="images/grow-logo.png" align="middle" id="growlogo">
+                </div>
+            </nav>
+>>>>>>> origin/master
             <div class="heading text-center">
                 <h3>Suggestions</h3>
             </div>
@@ -135,71 +186,43 @@
             </div>
         </div>
         <div class="card" id="rewards">
+<<<<<<< HEAD
 
+=======
+            <nav class="navbar" role="navigation">
+                <div class="content text-center">
+                    <img src="images/grow-logo.png" align="middle" id="growlogo">
+                </div>
+            </nav>
+>>>>>>> origin/master
             <div class="card">
-                <div class="heading text-center">
-                    <h3>All Of My Rewards</h3>
-                </div>
-                <div class="row">
+                <div class="heading text-center"><h3>All Of My Rewards</h3></div>
+                <div id="monsters">
+                    {{#user_monsters}}
                     <div class="col-xs-6">
-                        <img src="http://sharedvision.care/wp-content/uploads/2015/04/target.jpg" alt="Target logo" class="img-thumbnail">
-                        <div class="progress favbar1" >
-                            <div class="progress-bar" role="progressbar" style="width: 15%">
-                                15%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <img src="http://www.amomstake.com/wp-content/uploads/2013/03/PetSmart_logo-600x150.jpg" alt="Pet Smart logo" class="img-thumbnail">
+                        <img src="companies/{{name}}-logo.png" alt="{{name}}-ogo" class="img-thumbnail">
                         <div class="progress favbar1">
-                            <div class="progress-bar" role="progressbar" style="width: 60%">
-                                60%
+                            <div class="progress-bar" role="progressbar" style="width: {{percentage}}">
+                                {{percentage}}%
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6">
-                        <img src="http://i.bnet.com/blogs/gap_logo-old.jpg" alt="GAP logo" class="img-thumbnail">
-                        <div class="progress favbar1" >
-                            <div class="progress-bar" role="progressbar" style="width: 35%">
-                                35%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <img src="http://cvbj.biz/wp-content/uploads/2014/09/Apple-logo-icon-Aluminum-485x485.png" alt="APPLE logo" class="img-thumbnail">
-                        <div class="progress favbar1">
-                            <div class="progress-bar" role="progressbar" style="width: 42%">
-                                42%
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-6">
-                        <img src="https://s3.amazonaws.com/brand-logos/hm.jpg" alt="H&M logo" class="img-thumbnail">
-                        <div class="progress favbar1" >
-                            <div class="progress-bar" role="progressbar" style="width: 80%">
-                                80%
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6">
-                        <img src="http://vignette1.wikia.nocookie.net/logopedia/images/e/ee/Logo_brand_Adidas.png/revision/latest?cb=20150303221147" alt="APPLE logo" class="img-thumbnail">
-                        <div class="progress favbar1">
-                            <div class="progress-bar" role="progressbar" style="width: 100%">
-                                100%
-                            </div>
-                        </div>
-                    </div>
+                    {{/user_monsters}}
                 </div>
             </div>
         </div>
         <div class="page card" id="monster">
+<<<<<<< HEAD
 
+=======
+            <nav class="navbar" role="navigation">
+                <div class="content text-center">
+                    <img src="images/grow-logo.png" align="middle" id="growlogo">
+                </div>
+            </nav>
+>>>>>>> origin/master
             <div class="heading text-center">
-                <h1 id="strbx">STARBUCKS</h1>
+                <h1 id="strbx">starbucks</h1>
             </div>
             <div id="strbx_logo">
                 <img src="images/starbucks-logo.png">
@@ -215,7 +238,7 @@
                     <h2 id="tip_heading" >Tips</h2>
                 </div>
                 <div id="tips_strbx">
-                    <p>Create a PSL Fan Pass and unlock <br> a Pumpkin Spice Latte early!</p>
+                    <p>Create a PSL Fan Pass and unlock a Pumpkin Spice Latte early!</p>
                 </div>
                 <div class="progress favbar1">
                     <div class="progress-bar" role="progressbar" style="width: 25%">

@@ -7,13 +7,14 @@ User model
 	user_monsters: 	Array of Monster Objects
 }
 
-Monster model
+Monster(retailer) model
 {
-	rep_company: String (retailer name)
-	nickname:	 String
-	level:		 Number
-	points:		 Points
-	promos:		 String
+	"company" : 	String,
+	"level" : 		Number,
+	"next_item" : 	String,
+	"percentage" : 	Number,
+	"points" : 		Number,
+	"promos" :  	String
 }
 
 Method		URL						Desc

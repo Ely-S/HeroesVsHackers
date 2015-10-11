@@ -22,8 +22,10 @@ var app = express();
   app.use(passport.session());
   app.use(serveStatic(__dirname + '/public'));
 
-app.get('/user.json', passport.authenticate('facebook'), function(req, res){
-  res.send(req.user);
+app.get('/user.json', function(req, res){
+  console.log(req.isAuthenticated());
+  if(req.isAuthenticated()) return res.send(req.user);
+  return res.status(401).end()
 });
 
 // GET /auth/facebook
@@ -64,7 +66,7 @@ app.post('/login/login', function(req, res){
       return res.redirect(app.get("redirectUrl"));
     });
   }
-  return res.status(405).end();
+  return res.status(401).end();
 });
 
 app.post('/login/signup', function(req, res){
@@ -74,7 +76,7 @@ app.post('/login/signup', function(req, res){
       password: req.params.password,
       username: req.params.username
     });
-    return res.status(405).end();
+    return res.status(401).end();
   }
   return res.status(200).end();
 });
