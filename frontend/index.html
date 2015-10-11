@@ -22,7 +22,7 @@
         </nav>
         <div class="page card" id="signup">
             <div class="heading text-center">
-                <h2>Sign Up</h2>
+                <h3>Sign Up</h3>
             </div>
             <div class="content text-center">
                 <a href="/auth/login" class="btn btn-primary btn-fb" >Sign up with facebook</a>
@@ -47,7 +47,7 @@
         </div>
         <div class="page card" id="signin">
             <div class="heading text-center">
-                <h2>Sign In</h2>
+                <h3>Sign In</h3>
             </div>
             <div class="content text-center">
                 <a href="/auth/login" class="btn btn-primar btn-fb">Sign in with Facebook</a>
@@ -69,7 +69,7 @@
             <div class="page" id="index">
                 <div class="card">
                     <div class="heading text-center">
-                        <h2>Scan Me</h2>
+                        <h3>Scan Me</h3>
                     </div>
                     <div id="qrcode" class="content text-center"></div>
                 </div>
@@ -128,7 +128,7 @@
         <section class="panel suggestions" data-section-name="suggestions">
             <div class="card" id="suggestions">
                 <div class="heading text-center">
-                    <h2>Suggestions</h2>
+                    <h3>Suggestions</h3>
                 </div>
                 <div id="zara">
                     <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/v/t1.0-1/p200x200/1958484_1472305382984195_1464976903_n.jpg?oh=234279d4224bab1b4a41746291f6ad07&oe=56780050&__gda__=1447156412_1973abef38a7c16273d5dfde623a230b" alt="ZARA logo" class="img-responsive center-block">
@@ -149,27 +149,16 @@
         </section>
         <section data-section-name="rewards">
             <div class="card" id="rewards">
-<<<<<<< HEAD
                 <div class="card">
-                    <div class="heading text-center"><h2>All Of My Rewards</h2></div>
+                    <div class="heading text-center"><h3>All Of My Rewards</h3></div>
                     <div id="monsters">
                         {{#user_monsters}}
                         <div class="col-xs-6">
                             <img src="companies/{{name}}-logo.png" alt="{{name}}-logo" class="img-thumbnail">
                             <div class="progress favbar1">
-                                <div class="progress-bar" role="progressbar" style="width: {{percentage}}">
+                                <div class="progress-bar" role="progressbar" style="width:{{percentage}}">
                                     {{percentage}}%
                                 </div>
-=======
-                <div class="heading text-center"><h3>All Of My Rewards</h3></div>
-                <div id="monsters">
-                    {{#monsters}}
-                      <div class="col-xs-6">
-                        <img src="companies/{{company}}-logo.png" alt="{{company}}-ogo" class="img-thumbnail">
-                        <div class="progress favbar1">
-                            <div class="progress-bar" role="progressbar" style="width: {{percentage}}">
-                                {{percentage}}%
->>>>>>> origin/master
                             </div>
                         </div>
                      </div>
@@ -181,7 +170,7 @@
         <section class="panel monsters" data-section-name="monsters">
             <div class="page card" id="monster">
                 <div class="heading text-center">
-                    <h1 id="strbx">starbucks</h1>
+                    <h2> id="strbx">starbucks</h2>
                 </div>
                 <div id="strbx_logo">
                     <img src="images/starbucks-logo.png">
@@ -194,7 +183,7 @@
                 </div>
                 <div class="tips">
                     <div class="heading text-center">
-                        <h2 id="tip_heading" >Tips</h2>
+                        <h3 id="tip_heading" >Tips</h3>
                     </div>
                     <div id="tips_strbx">
                         <p>Create a PSL Fan Pass and unlock a Pumpkin Spice Latte early!</p>
@@ -212,9 +201,7 @@
         </section>
 
  </div>
-        <a class="other-brown">Redeem my rewards WHAT DOES THIS DO</a>
-        </div>
-</div>
+
 
 <script src="js/main.js"></script>
 <script src="js/scroll.js"></script>
@@ -233,7 +220,7 @@
             sectionName:"scan",
             easing:"easeOutExpo",
             scrollSpeed:900,
-            offset: -30,
+            offset: -10,
             scrollbars: true,
             axis:"y",
             target:"html,body",
