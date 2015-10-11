@@ -129,7 +129,7 @@
             <div class="card" id="suggestions">
 
                 <div class="heading text-center">
-                    <h3>Suggestions</h3>
+                    <h2>Suggestions</h2>
                 </div>
                 <div id="zara">
                     <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/v/t1.0-1/p200x200/1958484_1472305382984195_1464976903_n.jpg?oh=234279d4224bab1b4a41746291f6ad07&oe=56780050&__gda__=1447156412_1973abef38a7c16273d5dfde623a230b" alt="ZARA logo" class="img-responsive center-block">
@@ -152,7 +152,7 @@
         <section data-section-name="rewards">
             <div class="card" id="rewards">
                 <div class="card">
-                    <div class="heading text-center"><h3>All Of My Rewards</h3></div>
+                    <div class="heading text-center"><h2>All Of My Rewards</h2></div>
                     <div id="monsters">
                         {{#user_monsters}}
                         <div class="col-xs-6">
@@ -234,7 +234,7 @@
             sectionName:"suggestions",
             easing:"easeOutExpo",
             scrollSpeed:900,
-            offset: -30,
+            offset: -10,
             scrollbars: true,
             axis:"y",
             target:"html,body",
@@ -247,20 +247,7 @@
             sectionName:"rewards",
             easing:"easeOutExpo",
             scrollSpeed:900,
-            offset: -30,
-            scrollbars: true,
-            axis:"y",
-            target:"html,body",
-            before:function(){},
-            after:function(){},
-            afterResize:function(){}
-        });
-        $.scrollify({
-            section:"section",
-            sectionName:"monsters",
-            easing:"easeOutExpo",
-            scrollSpeed:900,
-            offset: -30,
+            offset: -10,
             scrollbars: true,
             axis:"y",
             target:"html,body",
