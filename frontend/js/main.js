@@ -3,6 +3,7 @@ var app = {
 
 	init: function(){
 		this.e = $(document.body);
+
 		// Determine if logged in
 		// if logged in go to page 1
 		// else display login screen till done
@@ -18,8 +19,11 @@ var app = {
 			this.rerender();
 		});
 
+	
+
 		jQuery(this.ready.bind(this));
 		this.pages();
+	
 	},
 
 	templates: {
@@ -33,7 +37,8 @@ var app = {
 		page("/signup", this.page.bind(this, "signup"));
 		page("/index", this.page.bind(this, "index"));
 		page.start();
-		if (location.href.endsWith('#logedIn')) {
+		if (location.href.slice(-8) === ('#logedIn')) {
+			page("/index");
 			this.trigger("login");
 		}
 	},
