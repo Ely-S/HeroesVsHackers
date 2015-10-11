@@ -93,6 +93,7 @@ button[type=submit]{
     margin-bottom:10px;
 }
 .card {
+    box-shadow: 0 3px 3px rgba(0,0,0,0.4);
     padding: 20px;
     background-color: white;
     border-radius: 30px;
@@ -127,7 +128,7 @@ h1, h2, h3 {
 
 #qrcode{
     margin: 0 auto;
-    width: 200px;
+    width: 300px;
 }
 
 #fb{
@@ -231,6 +232,12 @@ h1, h2, h3 {
 
 }
 
+#qrbox {
+    margin-top: 90px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
 .img-thumbnail{
     height:120px;
     width:150px;
@@ -261,7 +268,7 @@ h1, h2, h3 {
     margin-top:180px;
     border-radius:10px;
     border:1px transparent;
-    background-color: lightgrey;
+    background-color: #efefef;
 }
 
 #tip_heading{

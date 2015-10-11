@@ -126,8 +126,8 @@ var app = {
 	makeCode: function(id){	
 		return new QRCode("qrcode", {
 		    text: id,
-		    width: 200,
-		    height: 200,
+		    width: 300,
+		    height: 300,
 		    colorDark : "#000000",
 		    colorLight : "#ffffff",
 		    correctLevel : QRCode.CorrectLevel.H
