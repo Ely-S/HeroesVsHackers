@@ -33,13 +33,10 @@ login.set("onlogin", function(user) {
 	if(db[user.id]) {
 		return;
 	} else { 	//if not create new user
-		var id = user.id;
-		var name = user.name;
-
-		db.push(new person.Person(id,name));
+		db[id] = new person.Person(user.id, user.name);
 
 		fs.writeFile(dataPath, JSON.stringify(db), function() {
-			res.send("successfully modified");			
+			res.send("successfully modified");
 		});
 	}
 });
